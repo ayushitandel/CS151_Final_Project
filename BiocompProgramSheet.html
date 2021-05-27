@@ -141,7 +141,7 @@
               <tr>
               <td width='140'><input type='checkbox' name='sciencesection(2)' value='chem31a' onchange='modcheck(this)'> Chem 31A</td>
              <td width='140'><input type='checkbox' name='sciencesection(2)' value='chem31b' onchange='modcheck(this)'> Chem 31B</td>
-               
+
                 <td width='140'><input name='sciencesection(2)' onchange='modcheck(this)' type='checkbox' value='chem31m'> Chem 31M</td>
                 <td width='140'><input name='sciencesection(2)'' onchange='modcheck(this)' type='checkbox' value='chemap'> AP Chem (5)</td>
               </tr>
@@ -154,7 +154,7 @@
                 <td>&nbsp;</td>
               </tr>
   </table>
-  
+
     <p id="req(science3)" style="color:red">Select <em>all</em> of the following:</p>
   <table>
               <tr>
@@ -338,7 +338,7 @@
 
 <fieldset class='noprint'>
   <legend style="font-variant:small-caps">Depth </legend>
- 
+
   <p id="req(depth1)" style="color:red"> Select <em>one</em> of the following:</p>
   <table>
     <tr>
@@ -348,7 +348,7 @@
       <td width='140'><input name="depth(1)" onchange="modcheck(this)" type="checkbox" value="cs231a"> CS 231A</td>
   </table>
   <br/>
-  
+
    <p id="req(depth2)" style="color:red"> Select <em>one</em> of the following:</p>
   <table>
     <tr>
@@ -2298,19 +2298,19 @@ requirement(wim)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-satisfied(math1) :- 
-  josen(mathsection(1),math19) & 
-  josen(mathsection(1),math20) & 
+satisfied(math1) :-
+  josen(mathsection(1),math19) &
+  josen(mathsection(1),math20) &
   josen(mathsection(1),math21) &
-  units(math19,X1) & 
-  units(math20,X2) & 
-  units(math21,X3) & 
+  units(math19,X1) &
+  units(math20,X2) &
+  units(math21,X3) &
   plus(X1,X2,X3,TOTAL) &
   geq(TOTAL,10)
 
-satisfied(math1) :- 
+satisfied(math1) :-
   josen(mathsection(1),mathap) &
-  units(mathap,TOTAL) & 
+  units(mathap,TOTAL) &
   geq(TOTAL,10)
 
 satisfied(math2) :-
@@ -2331,15 +2331,15 @@ satisfied(science1) :- josen(sciencesection(1),phys41e)
 satisfied(science1) :- josen(sciencesection(1),phys61)
 satisfied(science1) :- josen(sciencesection(1),physap1)
 
-satisfied(science2) :- 
-  josen(sciencesection(2),chem31a) & 
-  josen(sciencesection(2),chem31b) 
-  
-satisfied(science2) :- josen(sciencesection(2),chem31m) 
-  
-satisfied(science2) :- josen(sciencesection(2),chemap) 
+satisfied(science2) :-
+  josen(sciencesection(2),chem31a) &
+  josen(sciencesection(2),chem31b)
 
-satisfied(science3) :- josen(sciencesection(3),chem33) 
+satisfied(science2) :- josen(sciencesection(2),chem31m)
+
+satisfied(science2) :- josen(sciencesection(2),chemap)
+
+satisfied(science3) :- josen(sciencesection(3),chem33)
 
 satisfied(science4) :-
   evaluate(countofall(C, josen(sciencesection(4),C)), All) &
@@ -2349,7 +2349,7 @@ satisfied(science5) :- scienceunits(TOTAL) & geq(TOTAL,26)
 
 satisfied(mathscience1) :- mathscienceunits(TOTAL) & geq(TOTAL,49)
 
-satisfied(tis) :- josen(tissection(1),COURSE) 
+satisfied(tis) :- josen(tissection(1),COURSE)
 
 
 satisfied(fundamental1) :- josen(fundamentalsection(1),COURSE) & units(COURSE,5)
@@ -2419,7 +2419,7 @@ units(C,N) :-
   countofall(courseunits(C,N),courseunits(C,N),0) &
   true(course(C,D,Num,T,N),catalog)
 
-mathunits(TOTAL) :- 
+mathunits(TOTAL) :-
   setofall([UNITS,COURSE,X], josen(mathsection(X),COURSE) & units(COURSE,UNITS), S) &
   extramath51cme100(DIFF) &
   evaluate(minus(sum(map(first,S)),DIFF),TOTAL)
@@ -2433,7 +2433,7 @@ extramath51cme100(DIFF) :-
 
 extramath51cme100(0) :- ~math51cme100
 
-scienceunits(TOTAL) :- 
+scienceunits(TOTAL) :-
   setofall([UNITS,COURSE,X], josen(sciencesection(X),COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
@@ -2442,7 +2442,7 @@ mathscienceunits(TOTAL) :-
   scienceunits(TOTAL2) &
   evaluate(plus(TOTAL1,TOTAL2),TOTAL)
 
-tisunits(TOTAL) :- 
+tisunits(TOTAL) :-
   setofall([U,C], josen(tissection(1),C) & units(C,U), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
@@ -2450,30 +2450,30 @@ fundamentalunits(TOTAL) :-
   setofall([U,C,X], josen(fundamentalsection(X),C) & units(C,U), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
-coreunits(TOTAL) :- 
+coreunits(TOTAL) :-
   setofall([UNITS,COURSE,X], josen(core(X),COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
-depthunits(TOTAL) :- 
+depthunits(TOTAL) :-
   setofall([UNITS,COURSE,X], josen(depth(X),COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
-electiveunits(TOTAL) :- 
+electiveunits(TOTAL) :-
   setofall([UNITS,COURSE,X], josen(elective(X),COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
-seniorunits(TOTAL) :- 
+seniorunits(TOTAL) :-
   setofall([UNITS,COURSE], josen(senior(1),COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
-csunits(TOTAL) :- 
+csunits(TOTAL) :-
   coreunits(TOTAL1) &
   depthunits(TOTAL2) &
   electiveunits(TOTAL3) &
   seniorunits(TOTAL4) &
   evaluate(plus(TOTAL1,TOTAL2,TOTAL3,TOTAL4),TOTAL)
 
-ugunits(TOTAL) :- 
+ugunits(TOTAL) :-
   setofall([UNITS,COURSE], josen(SECTION,COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
@@ -2638,29 +2638,29 @@ attribute(studentnotes,disabled,true) :- ~true(val(client,student),metadata)
 attribute(adminnotes,disabled,true) :- ~true(val(client,admin),metadata)
 
 
-style(save,display,"") :- 
+style(save,display,"") :-
   true(val(client,student),metadata)
 
-style(continue,display,"") :- 
+style(continue,display,"") :-
   true(val(client,student),metadata)
 
-style(submitit,display,"") :- 
+style(submitit,display,"") :-
   true(val(client,student),metadata)
 
-style(withdraw,display,"") :- 
+style(withdraw,display,"") :-
   true(val(client,student),metadata) &
   true(val(submittime,T),metadata)
 
 
-style(confirm,display,"") :- 
+style(confirm,display,"") :-
   true(val(client,admin),metadata) &
   true(val(submittime,T),metadata)
 
-style(unconfirm,display,"") :- 
+style(unconfirm,display,"") :-
   true(val(client,admin),metadata) &
   true(val(admintime,T),metadata)
 
-style(sendback,display,"") :- 
+style(sendback,display,"") :-
   true(val(client,admin),metadata) &
   true(val(submittime,T),metadata)
 
@@ -2747,8 +2747,8 @@ science(2,chem31b)
 science(3,chem31m)
 science(1,chemap)
 
-select(sciencesection(3),X) :: josen(sciencesection(3),X) 
-  
+select(sciencesection(3),X) :: josen(sciencesection(3),X)
+
 select(sciencesection(4),X) ::
   science(M,X) & science(N,Y) & distinct(M,N) ==> ~josen(sciencesection(4),Y)
 
@@ -2760,7 +2760,7 @@ science(4,bio86)
 science(5,humbio2a)
 science(5,humbio3a)
 science(5,humbio4a)
-  
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 select(tissection(1),X) ::
