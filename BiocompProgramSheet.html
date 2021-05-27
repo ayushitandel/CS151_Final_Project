@@ -4,10 +4,10 @@
 <!--=========================================================================-->
 
 <head>
-  <title>Computer Science: Artificial Intelligence Track 2020-21 Programsheet</title>
+  <title>Computer Science: Biocomputation Track 2020-21 Programsheet</title>
   <link href="/gin/stylesheets/ugme.css" rel="stylesheet">
-  <script src="/epilog/javascript/epilog.js"></script>
-  <script src="/worksheets/javascript/worksheets.js"></script>
+  <script type='text/javascript' src='http://epilog.stanford.edu/javascript/epilog.js'></script>
+  <script type='text/javascript' src='http://minimal.stanford.edu/worksheets/javascript/worksheets.js'></script>
 </head>
 
 <!--=========================================================================-->
@@ -24,7 +24,7 @@
       <td align='center'>
         <p><strong>Stanford University</strong>&nbsp;- <strong>School of Engineering</strong></p>
         <p><span style="font-size:18px"><strong>Computer Science</strong></span></p>
-        <p><span style="font-size:16px"><strong>Artificial Intelligence Track</strong></span></p>
+        <p><span style="font-size:16px"><strong>Biocomputation Track</strong></span></p>
         <p><span style="font-size:18px;"><strong>2020-21 Program Sheet</strong></span></p>
         <p><em>Final version of program sheet due to the department no later than one month prior to the last quarter of senior year.</em><br>
         <strong>*Follow all requirements as stated for the year of the programsheet used.*</strong></p>
@@ -48,25 +48,21 @@
     <tr>
       <td style="text-align: right;">Name:&nbsp;</td>
               <td><input autoquote="true" id="name" onchange="modstring(this)" style="width:100%;font-family:Arial;" type="text"/></td>
-              <!--<td style="border-width: 0px 0px 2px; border-style: solid; border-color: black;"><input autoquote="true" id="name" onchange="modstring(this)" style="width: 100%; background-color: transparent; border-style: none; box-sizing: border-box; font-family: Arial;" type="text"></td>-->
               <td>&nbsp;</td>
               <td style="text-align: right;">SU ID#:&nbsp;</td>
               <td><input autoquote="true" id="suid" onchange="modstring(this)" style="width:100%;font-family:Arial;" type="text"/></td>
-              <!--<td style="border-width: 0px 0px 2px; border-style: solid; border-color: black;"><input autoquote="true" id="suid" onchange="modstring(this)" style="width: 100%; background-color: transparent; border-style: none; box-sizing: border-box; font-family: Arial;" type="text"></td>-->
     </tr>
     <tr>
               <td style="text-align: right;">Phone:&nbsp;</td>
               <td><input autoquote="true" id="phone" onchange="modstring(this)" style="width:100%;font-family:Arial;" type="text"/></td>
-              <!--<td style="border-width: 0px 0px 2px; border-style: solid; border-color: black;"><input autoquote="true" id="phone" onchange="modstring(this)" style="width: 100%; background-color: transparent; border-style: none; box-sizing: border-box; font-family: Arial;" type="text"></td>-->
               <td>&nbsp;</td>
               <td style="text-align: right;">Email:&nbsp;</td>
               <td><input autoquote="true" id="email" onchange="modstring(this)" style="width:100%;font-family:Arial;" type="text"/></td>
-              <!--<td style="border-width: 0px 0px 2px; border-style: solid; border-color: black;"><input autoquote="true" id="email" onchange="modstring(this)" style="width: 100%; background-color: transparent; border-style: none; box-sizing: border-box; font-family: Arial;" type="text"></td>-->
+
     </tr>
     <tr>
               <td style="text-align: right;">Date:&nbsp;</td>
               <td><input autoquote="true" id="date" onchange="modstring(this)" style="width:100%;font-family:Arial;" type="text"/></td>
-              <!--<td style="border-width: 0px 0px 2px; border-style: solid; border-color: black;"><input autoquote="true" id="date" onchange="modstring(this)" style="width: 100%; background-color: transparent; border-style: none; box-sizing: border-box; font-family: Arial;" type="text"></td>-->
               <td>&nbsp;</td>
               <td style="text-align: right;">B.S Expected:&nbsp;</td>
               <td>Quarter:&nbsp;<select id="quarter" onchange="modselector(this)" style="border-width: 1px; border-style: solid; border-color: lightgrey; padding: 0px 5px; outline: none;"/><option value="autumn">Autumn</option><option value="winter">Winter</option><option value="spring">Spring</option><option value="summer">Summer</option></select>&nbsp; Year:&nbsp;<select id="year" onchange="modselector(this)" style="border-width: 1px; border-style: solid; border-color: lightgrey; padding: 0px 5px; outline: none;"/><option>2021</option><option>2022</option><option>2023</option><option>2024</option><option>2025</option><option>2026</option></select>
@@ -102,43 +98,23 @@
   </table>
   <br/>
 
-  <p id="req(math3)">Add at least two courses from the following:</p>
+  <p id="req(math3)" style="color:red">Select <em>one</em> of the following:</p>
   <table>
     <tr>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='cme100' onchange='modcheck(this)'> CME 100</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='cme102' onchange='modcheck(this)'> CME 102</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='cme103' onchange='modcheck(this)'> CME 103</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='cme104' onchange='modcheck(this)'> CME 104</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='cs157' onchange='modcheck(this)'> CS 157</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='cs205l' onchange='modcheck(this)'> CS 205L</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='ee103' onchange='modcheck(this)'> EE 103</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='engr108' onchange='modcheck(this)'> Engr 108</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='math51' onchange='modcheck(this)'> Math 51</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='math52' onchange='modcheck(this)'> Math 52</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='math53' onchange='modcheck(this)'> Math 53</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='math104' onchange='modcheck(this)'> Math 104</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='math107' onchange='modcheck(this)'> Math 107</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='math108' onchange='modcheck(this)'> Math 108</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='math109' onchange='modcheck(this)'> Math 109</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='math110' onchange='modcheck(this)'> Math 110</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='math113' onchange='modcheck(this)'> Math 113</td>
-      <td width='140'><input type='checkbox' name='mathsection(3)' value='phil151' onchange='modcheck(this)'> Phil 151</td>
+      <td width='140'><input type='checkbox' name='mathsection(3)' value='stats141' onchange='modcheck(this)'> STAT 141</td>
+      <td width='140'><input type='checkbox' name='mathsection(3)' value='stats203' onchange='modcheck(this)'> STAT 203</td>
+      <td width='140'><input type='checkbox' name='mathsection(3)' value='stats205' onchange='modcheck(this)'> STAT 205</td>
+      <td width='140'><input type='checkbox' name='mathsection(3)' value='stats215' onchange='modcheck(this)'> STAT 215</td>
+
     </tr>
   </table>
 
   <ul style='color:#888888'>
     <li>Changes to the Math requirements must be petitioned to the School of Engineering.</li>
-    <li id="math51cme100">Only 8 units of credit will be allowed for Math 51 and CME 100 due to overlapping material.</li>
-    <li>If you have taken both Math 51 and Math 52, you may not count CME 100 as an elective.</li>
-    <li>You may count at most one course from CS 157 and PHIL 151 and one from CME 103 and EE 103 and Engr 108.</li>
     <li id="consultapchart">Consult the <a href="https://registrar.stanford.edu/students/transfer-credit-and-advanced-placement/advanced-placement/ap-credit-chart" target="_blank" style="cursor: pointer; color: purple;">AP Chart for 2019-20</a> and adjust AP units accordingly.</li>
   </ul>
 
-  <p><span id="req(math4)" style="font-variant:small-caps;font-weight:bold;color:red">Math units (minimum 26):</span> <input disabled="true" id="totalunits(math)" size='2' style="font-weight:bold;font-size:18;color:black" type="text" value="0"></p>
+  <p><span id="req(math4)" style="font-variant:small-caps;font-weight:bold;color:red">Math units (minimum 23):</span> <input disabled="true" id="totalunits(math)" size='2' style="font-weight:bold;font-size:18;color:black" type="text" value="0"></p>
 
 </fieldset>
 
@@ -163,10 +139,26 @@
   <p id="req(science2)" style="color:red">Select <em>one</em> course from the following:</p>
   <table>
               <tr>
-                <td width='140'><input name='sciencesection(2)' onchange='modcheck(this)' type='checkbox' value='phys23'> Phys 23</td>
-                <td width='140'><input name='sciencesection(2)' onchange='modcheck(this)' type='checkbox' value='phys43'> Phys 43</td>
-                <td width='140'><input name='sciencesection(2)' onchange='modcheck(this)' type='checkbox' value='phys63'> Phys 63</td>
-                <td width='140'><input name='sciencesection(2)'' onchange='modcheck(this)' type='checkbox' value='physap2'> AP Physics</td>
+              <td width='140'><input type='checkbox' name='sciencesection(2)' value='chem31a' onchange='modcheck(this)'> Chem 31A</td>
+             <td width='140'><input type='checkbox' name='sciencesection(2)' value='chem31b' onchange='modcheck(this)'> Chem 31B</td>
+               
+                <td width='140'><input name='sciencesection(2)' onchange='modcheck(this)' type='checkbox' value='chem31m'> Chem 31M</td>
+                <td width='140'><input name='sciencesection(2)'' onchange='modcheck(this)' type='checkbox' value='chemap'> AP Chem (5)</td>
+              </tr>
+              <tr>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+  </table>
+  
+    <p id="req(science3)" style="color:red">Select <em>all</em> of the following:</p>
+  <table>
+              <tr>
+                <td width='140'><input name='sciencesection(3)' onchange='modcheck(this)' type='checkbox' value='chem33'> Chem 33</td>
               </tr>
               <tr>
                 <td>&nbsp;</td>
@@ -179,61 +171,22 @@
   </table>
 
 
-  <p colspan="6" id="req(science3)" style="color: red;">Select <em>one</em> additional course from the following:</td></tr>
+  <p colspan="6" id="req(science4)" style="color: red;">Select <em>three</em> courses from the following:</td></tr>
   <table>
     <tr>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio150' onchange='modcheck(this)'> Bio 150</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio30' onchange='modcheck(this)'> Bio 30</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio45' onchange='modcheck(this)'> Bio 45</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio46' onchange='modcheck(this)'> Bio 46</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio47' onchange='modcheck(this)'> Bio 47</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio81' onchange='modcheck(this)'> Bio 81</td>
+      <td width='140'><input type='checkbox' name='sciencesection(4)' value='bio82' onchange='modcheck(this)'> Bio 82</td>
+      <td width='140'><input type='checkbox' name='sciencesection(4)' value='bio83' onchange='modcheck(this)'> Bio 83</td>
+      <td width='140'><input type='checkbox' name='sciencesection(4)' value='bio84' onchange='modcheck(this)'> Bio 84</td>
+      <td width='140'><input type='checkbox' name='sciencesection(4)' value='bio85' onchange='modcheck(this)'> Bio 85</td>
+      <td width='140'><input type='checkbox' name='sciencesection(4)' value='bio86' onchange='modcheck(this)'> Bio 86</td>
     </tr>
+  </table>
+  <p colspan="6" id="req(science4)" style="color: red;">Or complete <em>all</em> of the following:</td></tr>
+    <table>
     <tr>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio82' onchange='modcheck(this)'> Bio 82</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio83' onchange='modcheck(this)'> Bio 83</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio84' onchange='modcheck(this)'> Bio 84</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio85' onchange='modcheck(this)'> Bio 85</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='bio86' onchange='modcheck(this)'> Bio 86</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='cee63' onchange='modcheck(this)'> CEE 63</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='cee70' onchange='modcheck(this)'> CEE 70</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='chem31a' onchange='modcheck(this)'> Chem 31A</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='chem31b' onchange='modcheck(this)'> Chem 31B</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='chem31x' onchange='modcheck(this)'> Chem 31X</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='chem33' onchange='modcheck(this)'> Chem 33</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='earthsys10' onchange='modcheck(this)'> Earthsys 10</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='gs1' onchange='modcheck(this)'> Geo 1</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys21' onchange='modcheck(this)'> Phys 21</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys22' onchange='modcheck(this)'> Phys 22</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys23' onchange='modcheck(this)'> Phys 23</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys24' onchange='modcheck(this)'> Phys 24</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys25' onchange='modcheck(this)'> Phys 25</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys26' onchange='modcheck(this)'> Phys 26</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys41' onchange='modcheck(this)'> Phys 41</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys41e' onchange='modcheck(this)'> Phys 41e</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys42' onchange='modcheck(this)'> Phys 42</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys43' onchange='modcheck(this)'> Phys 43</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys44' onchange='modcheck(this)'> Phys 44</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys45' onchange='modcheck(this)'> Phys 45</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys46' onchange='modcheck(this)'> Phys 46</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys61' onchange='modcheck(this)'> Phys 61</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys62' onchange='modcheck(this)'> Phys 62</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys63' onchange='modcheck(this)'> Phys 63</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys64' onchange='modcheck(this)'> Phys 64</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys65' onchange='modcheck(this)'> Phys 65</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='phys67' onchange='modcheck(this)'> Phys 67</td>
-      <td width='140'><input type='checkbox' name='sciencesection(3)' value='psych30' onchange='modcheck(this)'> Psych 30</td>
-      <td><input name='sciencesection(3)' onchange='modcheck(this)' type='checkbox' value='chemap'> AP Chemistry</td>
+      <td width='140'><input type='checkbox' name='sciencesection(4)' value='humbio2a' onchange='modcheck(this)'> HUMBIO 2A</td>
+      <td width='140'><input type='checkbox' name='sciencesection(4)' value='humbio3a' onchange='modcheck(this)'> HUMBIO 3A</td>
+      <td width='140'><input type='checkbox' name='sciencesection(4)' value='humbio4a' onchange='modcheck(this)'> HUMBIO 4A</td>
     </tr>
   </table>
 
@@ -242,7 +195,7 @@
     <li id="soescience" style="padding-bottom:5px; color:blue">Ensure that you have petitioned the SoE to count the additional Science courses and that your petitions have been approved.</li>
   </ul>
 
-  <p><span id="req(science4)" style="font-variant:small-caps;font-weight:bold;color:red">Science units (minimum 11):</span> <input disabled="true" id="totalunits(science)" size='2' style="font-weight:bold;font-size:18;color:black" type="text" value="0"></p>
+  <p><span id="req(science5)" style="font-variant:small-caps;font-weight:bold;color:red">Science units (minimum 26):</span> <input disabled="true" id="totalunits(science)" size='2' style="font-weight:bold;font-size:18;color:black" type="text" value="0"></p>
 
 </fieldset>
 
@@ -307,37 +260,27 @@
   </table>
   <br/>
 
-  <p id="req(fundamental2)" style="color: red;">Select <em>one course</em>&nbsp;from the following:</p>
+  <p id="req(fundamental2)" style="color: red;">Select one course from the following:</p>
   <table>
     <tr>
-      <td width='140'><input name='fundamentalsection(2)' onchange='modcheck(this)' type='checkbox' value='engr40a'> Engr 40A</td>
-      <td width='140'><input name='fundamentalsection(2)' onchange='modcheck(this)' type='checkbox' value='engr40b'> Engr 40B</td>
-      <td width='140'><input name='fundamentalsection(2)' onchange='modcheck(this)' type='checkbox' value='engr40m'> Engr 40M</td>
-    </tr>
-  </table>
-  <br/>
-
-  <p id="req(fundamental3)" style="color: red;">Select additional courses from the following:</p>
-  <table>
-    <tr>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='cee70' onchange='modcheck(this)'> CEE 70</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr10' onchange='modcheck(this)'> Engr 10</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr14' onchange='modcheck(this)'> Engr 14</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr15' onchange='modcheck(this)'> Engr 15</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr20' onchange='modcheck(this)'> Engr 20</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr21' onchange='modcheck(this)'> Engr 21</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='cee70' onchange='modcheck(this)'> CEE 70</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr10' onchange='modcheck(this)'> Engr 10</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr14' onchange='modcheck(this)'> Engr 14</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr15' onchange='modcheck(this)'> Engr 15</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr20' onchange='modcheck(this)'> Engr 20</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr21' onchange='modcheck(this)'> Engr 21</td>
     </tr>
     <tr>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr25b' onchange='modcheck(this)'> Engr 25B</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr25e' onchange='modcheck(this)'> Engr 25E</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr50' onchange='modcheck(this)'> Engr 50</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr50e' onchange='modcheck(this)'> Engr 50E</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr50m' onchange='modcheck(this)'> Engr 50M</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr60' onchange='modcheck(this)'> Engr 60</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr25b' onchange='modcheck(this)'> Engr 25B</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr25e' onchange='modcheck(this)'> Engr 25E</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr50' onchange='modcheck(this)'> Engr 50</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr50e' onchange='modcheck(this)'> Engr 50E</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr50m' onchange='modcheck(this)'> Engr 50M</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr60' onchange='modcheck(this)'> Engr 60</td>
     </tr>
     <tr>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr62' onchange='modcheck(this)'> Engr 62</td>
-      <td width='140'><input type='checkbox' name='fundamentalsection(3)' value='engr80' onchange='modcheck(this)'> Engr 80</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr62' onchange='modcheck(this)'> Engr 62</td>
+      <td width='140'><input type='checkbox' name='fundamentalsection(2)' value='engr80' onchange='modcheck(this)'> Engr 80</td>
     </tr>
   </table>
 
@@ -348,7 +291,7 @@
     <li>Okay to use an additional Depth elective to satisfy this requirement.  Specify in Student Notes.</li>
   </ul>
 
-  <p><span id="req(fundamental4)" style="font-variant:small-caps;font-weight:bold;color:red">Engineering units (minimum 13):</span> <input disabled="true" id="totalunits(fundamental)" size='2' style="font-weight:bold;font-size:18;color:black" type="text" value="0"></p>
+  <p><span id="req(fundamental3)" style="font-variant:small-caps;font-weight:bold;color:red">Engineering units (minimum 8):</span> <input disabled="true" id="totalunits(fundamental)" size='2' style="font-weight:bold;font-size:18;color:black" type="text" value="0"></p>
 
 </fieldset>
 
@@ -394,111 +337,57 @@
 <!--=========================================================================-->
 
 <fieldset class='noprint'>
-  <legend style="font-variant:small-caps">Depth Track</legend>
-  <p id="req(track1)" style="color:red">Track A:Select CS 221 for 4 units:</p>
-  <table>
-    <tr>
-      <td><input name='track(1)' onchange='modcheck(this)' type='checkbox' value='cs221'> CS 221</td>
-    </tr>
-  </table>
-  <br/>
+  <legend style="font-variant:small-caps">Depth </legend>
  
-  <p id="req(track2)" style="color:red">Track B: Select <em>two</em> courses, each from a different area:</p>
-  <p>I. AI Methods:</p>
+  <p id="req(depth1)" style="color:red"> Select <em>one</em> of the following:</p>
   <table>
     <tr>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs228"> CS 228</td>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs229"> CS 229</td>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs234"> CS 234</td>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs238"> CS 238</td>
+      <td width='140'><input name="depth(1)" onchange="modcheck(this)" type="checkbox" value="cs221"> CS 221</td>
+      <td width='140'><input name="depth(1)" onchange="modcheck(this)" type="checkbox" value="cs228"> CS 228</td>
+      <td width='140'><input name="depth(1)" onchange="modcheck(this)" type="checkbox" value="cs229"> CS 229</td>
+      <td width='140'><input name="depth(1)" onchange="modcheck(this)" type="checkbox" value="cs231a"> CS 231A</td>
+  </table>
+  <br/>
+  
+   <p id="req(depth2)" style="color:red"> Select <em>one</em> of the following:</p>
+  <table>
+    <tr>
+      <td width='140'><input name="depth(2)" onchange="modcheck(this)" type="checkbox" value="cs235"> CS 235</td>
+      <td width='140'><input name="depth(2)" onchange="modcheck(this)" type="checkbox" value="cs270"> CS 270</td>
+      <td width='140'><input name="depth(2)" onchange="modcheck(this)" type="checkbox" value="cs273a"> CS 273A</td>
+      <td width='140'><input name="depth(2)" onchange="modcheck(this)" type="checkbox" value="cs274"> CS 274</td>
+      <td width='140'><input name="depth(2)" onchange="modcheck(this)" type="checkbox" value="cs275"> CS 275</td>
+      <td width='140'><input name="depth(2)" onchange="modcheck(this)" type="checkbox" value="cs279"> CS 279</td>
   </table>
   <br/>
 
-  <p>II. Natural Language Processing:</p>
+  <p id="req(depth3)" style="color:red"> Select <em>one</em> of the following (if not selected above):</p>
   <table>
     <tr>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs124"> CS 124</td>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs224n"> CS 224N</td>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs224s"> CS 224S</td>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs224u"> CS 224U</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs124"> CS 124</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs145"> CS 145</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs147"> CS 147</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs148"> CS 148</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs221"> CS 221</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs228"> CS 228</td>
+    </tr>
+    <tr>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs229"> CS 229</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs231a"> CS 231A</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs235"> CS 235</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs248"> CS 248</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs270"> CS 270</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs273a"> CS 273A</td>
+    </tr>
+    <tr>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs274"> CS 274</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs275"> CS 275</td>
+      <td width='140'><input name="depth(3)" onchange="modcheck(this)" type="checkbox" value="cs279"> CS 279</td>
     </tr>
   </table>
   <br/>
 
-  <p>III. Vision:</p>
-  <table>
-    <tr>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs131"> CS 131</td>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs231a"> CS 231A</td>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs231n"> CS 231N</td>
-    </tr>
-  </table>
-  <br/>
-
-  <p>IV. Robotics:</p>
-  <table>
-    <tr>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs223a"> CS 223A</td>
-      <td width='140'><input name="track(2)" onchange="modcheck(this)" type="checkbox" value="cs237a"> CS 237A</td>
-    </tr>
-  </table>
-  <br/>
-
-  <p id="req(track3)" style="color:red">Track C: Select <i>one additional</i> course from the following:</p>
-  <table>
-    <tr>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs124' onchange='modcheck(this)'> CS 124</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs131' onchange='modcheck(this)'> CS 131</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs151' onchange='modcheck(this)'> CS 151</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs157' onchange='modcheck(this)'> CS 157</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs205l' onchange='modcheck(this)'> CS 205L</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs223a' onchange='modcheck(this)'> CS 223A</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs224n' onchange='modcheck(this)'> CS 224N</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs224s' onchange='modcheck(this)'> CS 224S</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs224u' onchange='modcheck(this)'> CS 224U</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs224w' onchange='modcheck(this)'> CS 224W</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs227b' onchange='modcheck(this)'> CS 227B</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs228' onchange='modcheck(this)'> CS 228</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs229' onchange='modcheck(this)'> CS 229</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs230' onchange='modcheck(this)'> CS 230</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs231a' onchange='modcheck(this)'> CS 231A</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs231n' onchange='modcheck(this)'> CS 231N</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs234' onchange='modcheck(this)'> CS 234</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs235' onchange='modcheck(this)'> CS 235</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs236' onchange='modcheck(this)'> CS 236</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs237a' onchange='modcheck(this)'> CS 237A</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs237b' onchange='modcheck(this)'> CS 237B</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs238' onchange='modcheck(this)'> CS 238</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs276' onchange='modcheck(this)'> CS 276</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs279' onchange='modcheck(this)'> CS 279</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs327a' onchange='modcheck(this)'> CS 327A</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs329' onchange='modcheck(this)'> CS 329</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs338' onchange='modcheck(this)'> CS 338</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs371' onchange='modcheck(this)'> CS 371</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='cs379' onchange='modcheck(this)'> CS 379</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='engr205' onchange='modcheck(this)'> ENGR 205</td>
-    </tr>
-    <tr>
-      <td width='140'><input type='checkbox' name='track(3)' value='mse251' onchange='modcheck(this)'> MS&E 251</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='mse351' onchange='modcheck(this)'> MS&E 351</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='stats315a' onchange='modcheck(this)'> STATS 315A</td>
-      <td width='140'><input type='checkbox' name='track(3)' value='stats315b' onchange='modcheck(this)'> STATS 315B</td>
-    </tr>
-  </table>
-
-  <ul>
-    <li id="track3approval" style="color:#888888">CS 329 requires advisor's approval.</li>
-  </ul>
-
-  <p><span style="font-variant:small-caps;font-weight:bold">Track units:</span> <input disabled="true" id="totalunits(track)" size='2' style="font-weight:bold;font-size:18;color:black" type="text" value="0"></p>
+  <p><span id="req(depth8)" style="font-variant:small-caps;font-weight:bold;color:red">Depth units (minimum 21):</span> <input disabled="true" id="totalunits(depth)" size='2' style="font-weight:bold;font-size:18;color:black" type="text" value="0"></p>
 
 </fieldset>
 
@@ -2199,6 +2088,12 @@
       <td><select id='grade(scienceelective4)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(scienceelective4)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
+    <tr id='row(stats141)' style='display:none'>
+      <td>Stats 205</td>
+      <td>Biostatistic</td>
+      <td><select id='grade(stats141)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(stats141)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
     <tr id='row(stats200)' style='display:none'>
       <td>Stats 200</td>
       <td>Introduction to Statistical Inference</td>
@@ -2211,11 +2106,23 @@
       <td><select id='grade(stats202)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(stats202)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
+    <tr id='row(stats203)' style='display:none'>
+      <td>Stats 203</td>
+      <td>Introduction to Regression Models and Analysis of Variance</td>
+      <td><select id='grade(stats203)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(stats203)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
     <tr id='row(stats205)' style='display:none'>
       <td>Stats 205</td>
       <td>Introduction to Nonparametric Statistics</td>
       <td><select id='grade(stats205)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(stats205)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(stats215)' style='display:none'>
+      <td>Stats 215</td>
+      <td>Statistical Models in Biology</td>
+      <td><select id='grade(stats215)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(stats215)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
     <tr id='row(stats315a)' style='display:none'>
       <td>Stats 315A</td>
@@ -2358,6 +2265,7 @@ requirement(science1)
 requirement(science2)
 requirement(science3)
 requirement(science4)
+requirement(science5)
 
 requirement(mathscience1)
 
@@ -2366,16 +2274,17 @@ requirement(tis)
 requirement(fundamental1)
 requirement(fundamental2)
 requirement(fundamental3)
-requirement(fundamental4)
 
 requirement(core1)
 requirement(core2)
 requirement(core3)
 requirement(core4)
 
-requirement(track1)
-requirement(track2)
-requirement(track3)
+requirement(depth1)
+requirement(depth2)
+requirement(depth3)
+requirement(depth8)
+
 
 requirement(elective1)
 
@@ -2400,14 +2309,6 @@ satisfied(math1) :-
   geq(TOTAL,10)
 
 satisfied(math1) :- 
-  josen(mathsection(1),math41) & 
-  josen(mathsection(1),math42) &
-  units(math41,X1) & 
-  units(math42,X2) & 
-  plus(X1,X2,TOTAL) &
-  geq(TOTAL,10)
-
-satisfied(math1) :- 
   josen(mathsection(1),mathap) &
   units(mathap,TOTAL) & 
   geq(TOTAL,10)
@@ -2420,10 +2321,9 @@ satisfied(math2) :-
 
 satisfied(math3) :-
   countofall(COURSE, josen(mathsection(3),COURSE), N) &
-  geq(N,2)
+  geq(N,1)
 
-satisfied(math4) :- mathunits(TOTAL) & geq(TOTAL,26)
-
+satisfied(math4) :- mathunits(TOTAL) & geq(TOTAL,23)
 
 satisfied(science1) :- josen(sciencesection(1),phys21)
 satisfied(science1) :- josen(sciencesection(1),phys41)
@@ -2431,28 +2331,30 @@ satisfied(science1) :- josen(sciencesection(1),phys41e)
 satisfied(science1) :- josen(sciencesection(1),phys61)
 satisfied(science1) :- josen(sciencesection(1),physap1)
 
-satisfied(science2) :- josen(sciencesection(2),phys23)
-satisfied(science2) :- josen(sciencesection(2),phys43)
-satisfied(science2) :- josen(sciencesection(2),phys63)
-satisfied(science2) :- josen(sciencesection(2),physap2)
+satisfied(science2) :- 
+  josen(sciencesection(2),chem31a) & 
+  josen(sciencesection(2),chem31b) 
+  
+satisfied(science2) :- josen(sciencesection(2),chem31m) 
+  
+satisfied(science2) :- josen(sciencesection(2),chemap) 
 
-satisfied(science3) :-
-  josen(sciencesection(3),C) &
-  units(C,UNITS) &
-  geq(UNITS,3)
+satisfied(science3) :- josen(sciencesection(3),chem33) 
 
-satisfied(science4) :- scienceunits(TOTAL) & geq(TOTAL,11)
+satisfied(science4) :-
+  evaluate(countofall(C, josen(sciencesection(4),C)), All) &
+  geq(All, 3)
 
-satisfied(mathscience1) :- mathscienceunits(TOTAL) & geq(TOTAL,37)
+satisfied(science5) :- scienceunits(TOTAL) & geq(TOTAL,26)
 
+satisfied(mathscience1) :- mathscienceunits(TOTAL) & geq(TOTAL,49)
 
 satisfied(tis) :- josen(tissection(1),COURSE) 
 
 
 satisfied(fundamental1) :- josen(fundamentalsection(1),COURSE) & units(COURSE,5)
 satisfied(fundamental2) :- josen(fundamentalsection(2),COURSE)
-satisfied(fundamental3) :- fundamentalunits(TOTAL) & geq(TOTAL,13)
-satisfied(fundamental4) :- fundamentalunits(TOTAL) & geq(TOTAL,13)
+satisfied(fundamental3) :- fundamentalunits(TOTAL) & geq(TOTAL,8)
 
 
 satisfied(core1) :- josen(core(1),COURSE) & units(COURSE,5)
@@ -2464,39 +2366,40 @@ satisfied(core3) :- josen(core(3),cs161) & units(cs161,5)
 satisfied(core4) :- coreunits(TOTAL) & geq(TOTAL,15)
 
 
-satisfied(track1) :- josen(track(1),cs221) & units(cs221,4)
+satisfied(depth1) :- josen(depth(1),cs221)
+satisfied(depth1) :- josen(depth(1),cs228)
+satisfied(depth1) :- josen(depth(1),cs229)
+satisfied(depth1) :- josen(depth(1),cs231a)
 
-satisfied(track2) :-
-  josen(track(2),COURSE1) & group(COURSE1,A) &
-  josen(track(2),COURSE2) & group(COURSE2,B) &
-  distinct(A,B)
+satisfied(depth2) :- josen(depth(2),cs235)
+satisfied(depth2) :- josen(depth(2),cs270)
+satisfied(depth2) :- josen(depth(2),cs273a)
+satisfied(depth2) :- josen(depth(2),cs274)
+satisfied(depth2) :- josen(depth(2),cs275)
+satisfied(depth2) :- josen(depth(2),cs279)
 
-group(cs228,a)
-group(cs229,a)
-group(cs234,a)
-group(cs238,a)
+satisfied(depth3) :- josen(depth(3),cs124)
+satisfied(depth3) :- josen(depth(3),cs229)
+satisfied(depth3) :- josen(depth(3),cs274)
+satisfied(depth3) :- josen(depth(3),cs145)
+satisfied(depth3) :- josen(depth(3),cs231a)
+satisfied(depth3) :- josen(depth(3),cs275)
+satisfied(depth3) :- josen(depth(3),cs275)
+satisfied(depth3) :- josen(depth(3),cs147)
+satisfied(depth3) :- josen(depth(3),cs235)
+satisfied(depth3) :- josen(depth(3),cs279)
+satisfied(depth3) :- josen(depth(3),cs148)
+satisfied(depth3) :- josen(depth(3),cs248)
+satisfied(depth3) :- josen(depth(3),cs221)
+satisfied(depth3) :- josen(depth(3),cs270)
+satisfied(depth3) :- josen(depth(3),cs228)
+satisfied(depth3) :- josen(depth(3),cs273a)
 
-group(cs124,b)
-group(cs224n,b)
-group(cs224s,b)
-group(cs224u,b)
-
-group(cs131,c)
-group(cs231a,c)
-group(cs231n,c)
-
-group(cs223a,d)
-group(cs237a,d)
-
-satisfied(track3) :- josen(track(3),COURSE)
-
-satisfied(elective1) :- countofall([COURSE,X], josen(elective(X),COURSE),N) & geq(N,3)
-
-satisfied(depth1) :- depthunits(TOTAL) & geq(TOTAL,25)
+satisfied(depth8) :- depthunits(TOTAL) & geq(TOTAL,21)
 
 satisfied(senior) :- josen(senior(1),COURSE) & units(COURSE,UNITS) & geq(UNITS,3)
 
-satisfied(cs1) :- csunits(TOTAL) & geq(TOTAL,43)
+satisfied(cs1) :- csunits(TOTAL) & geq(TOTAL,39)
 
 satisfied(wim) :- wimcourse(X) & josen(Y,X)
 
@@ -2551,18 +2454,13 @@ coreunits(TOTAL) :-
   setofall([UNITS,COURSE,X], josen(core(X),COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
-trackunits(TOTAL) :- 
-  setofall([UNITS,COURSE,X], josen(track(X),COURSE) & units(COURSE,UNITS), S) &
+depthunits(TOTAL) :- 
+  setofall([UNITS,COURSE,X], josen(depth(X),COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
 
 electiveunits(TOTAL) :- 
   setofall([UNITS,COURSE,X], josen(elective(X),COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
-
-depthunits(TOTAL) :- 
-  trackunits(TOTAL1) &
-  electiveunits(TOTAL2) &
-  plus(TOTAL1,TOTAL2,TOTAL)
 
 seniorunits(TOTAL) :- 
   setofall([UNITS,COURSE], josen(senior(1),COURSE) & units(COURSE,UNITS), S) &
@@ -2570,7 +2468,7 @@ seniorunits(TOTAL) :-
 
 csunits(TOTAL) :- 
   coreunits(TOTAL1) &
-  trackunits(TOTAL2) &
+  depthunits(TOTAL2) &
   electiveunits(TOTAL3) &
   seniorunits(TOTAL4) &
   evaluate(plus(TOTAL1,TOTAL2,TOTAL3,TOTAL4),TOTAL)
@@ -2591,23 +2489,10 @@ courses(mathsection(1),mathap)
 courses(mathsection(2),cs103)
 courses(mathsection(2),cs109)
 
-courses(mathsection(3),cme100)
-courses(mathsection(3),cme102)
-courses(mathsection(3),cme103)
-courses(mathsection(3),cme104)
-courses(mathsection(3),cs157)
-courses(mathsection(3),cs205l)
-courses(mathsection(3),ee103)
-courses(mathsection(3),math51)
-courses(mathsection(3),math52)
-courses(mathsection(3),math53)
-courses(mathsection(3),math104)
-courses(mathsection(3),math107)
-courses(mathsection(3),math108)
-courses(mathsection(3),math109)
-courses(mathsection(3),math110)
-courses(mathsection(3),math113)
-courses(mathsection(3),phil151)
+courses(mathsection(3),stats141)
+courses(mathsection(3),stats203)
+courses(mathsection(3),stats205)
+courses(mathsection(3),stats215)
 
 courses(sciencesection(1),phys21)
 courses(sciencesection(1),phys41)
@@ -2615,56 +2500,21 @@ courses(sciencesection(1),phys41e)
 courses(sciencesection(1),phys61)
 courses(sciencesection(1),physap1)
 
-courses(sciencesection(2),phys23)
-courses(sciencesection(2),phys43)
-courses(sciencesection(2),phys63)
-courses(sciencesection(2),physap2)
+courses(sciencesection(2),chem31a)
+courses(sciencesection(2),chem31b)
+courses(sciencesection(2),chem31m)
+courses(sciencesection(2),chemap)
 
-courses(sciencesection(3),bio30)
-courses(sciencesection(3),bio45)
-courses(sciencesection(3),bio46)
-courses(sciencesection(3),bio47)
-courses(sciencesection(3),bio81)
-courses(sciencesection(3),bio82)
-courses(sciencesection(3),bio83)
-courses(sciencesection(3),bio84)
-courses(sciencesection(3),bio85)
-courses(sciencesection(3),bio86)
-courses(sciencesection(3),bio150)
-courses(sciencesection(3),cee63)
-courses(sciencesection(3),cee70)
-courses(sciencesection(3),chem31a)
-courses(sciencesection(3),chem31b)
-courses(sciencesection(3),chem31x)
 courses(sciencesection(3),chem33)
-courses(sciencesection(3),earthsys10)
-courses(sciencesection(3),gs1)
-courses(sciencesection(3),phys21)
-courses(sciencesection(3),phys22)
-courses(sciencesection(3),phys23)
-courses(sciencesection(3),phys24)
-courses(sciencesection(3),phys25)
-courses(sciencesection(3),phys26)
-courses(sciencesection(3),phys41)
-courses(sciencesection(3),phys41e)
-courses(sciencesection(3),phys42)
-courses(sciencesection(3),phys43)
-courses(sciencesection(3),phys44)
-courses(sciencesection(3),phys45)
-courses(sciencesection(3),phys46)
-courses(sciencesection(3),phys61)
-courses(sciencesection(3),phys62)
-courses(sciencesection(3),phys63)
-courses(sciencesection(3),phys64)
-courses(sciencesection(3),phys65)
-courses(sciencesection(3),phys67)
-courses(sciencesection(3),psych30)
-courses(sciencesection(3),chemap)
 
-courses(sciencesection(4),scienceelective1)
-courses(sciencesection(4),scienceelective2)
-courses(sciencesection(4),scienceelective3)
-courses(sciencesection(4),scienceelective4)
+courses(sciencesection(4),bio82)
+courses(sciencesection(4),bio83)
+courses(sciencesection(4),bio84)
+courses(sciencesection(4),bio85)
+courses(sciencesection(4),bio86)
+courses(sciencesection(4),humbio2a)
+courses(sciencesection(4),humbio3a)
+courses(sciencesection(4),humbio4a)
 
 courses(tissection(1),aa252)
 courses(tissection(1),bioe131)
@@ -2722,188 +2572,33 @@ courses(core(2),cs111)
 
 courses(core(3),cs161)
 
-courses(track(1),cs221)
+courses(depth(1),cs221)
+courses(depth(1),cs228)
+courses(depth(1),cs229)
+courses(depth(1),cs231a)
 
-courses(track(2),cs228)
-courses(track(2),cs229)
-courses(track(2),cs234)
-courses(track(2),cs238)
+courses(depth(2),cs235)
+courses(depth(2),cs270)
+courses(depth(2),cs273a)
+courses(depth(2),cs274)
+courses(depth(2),cs275)
+courses(depth(2),cs279)
 
-courses(track(2),cs124)
-courses(track(2),cs224n)
-courses(track(2),cs224s)
-courses(track(2),cs224u)
-
-courses(track(2),cs131)
-courses(track(2),cs231a)
-courses(track(2),cs231n)
-
-courses(track(2),cs223a)
-courses(track(2),cs237a)
-
-courses(track(3),cs124)
-courses(track(3),cs131)
-courses(track(3),cs151)
-courses(track(3),cs157)
-courses(track(3),cs205l)
-courses(track(3),cs223a)
-courses(track(3),cs224n)
-courses(track(3),cs224s)
-courses(track(3),cs224u)
-courses(track(3),cs224w)
-courses(track(3),cs227b)
-courses(track(3),cs228)
-courses(track(3),cs229)
-courses(track(3),cs230)
-courses(track(3),cs231a)
-courses(track(3),cs231n)
-courses(track(3),cs234)
-courses(track(3),cs235)
-courses(track(3),cs236)
-courses(track(3),cs237a)
-courses(track(3),cs237b)
-courses(track(3),cs238)
-courses(track(3),cs276)
-courses(track(3),cs279)
-courses(track(3),cs327a)
-courses(track(3),cs329)
-courses(track(3),cs338)
-courses(track(3),cs371)
-courses(track(3),cs379)
-courses(track(3),engr205)
-courses(track(3),mse251)
-courses(track(3),mse351)
-courses(track(3),stats315a)
-courses(track(3),stats315b)
-
-courses(elective(1),cme108)
-courses(elective(1),cs108)
-courses(elective(1),cs124)
-courses(elective(1),cs131)
-courses(elective(1),cs140)
-courses(elective(1),cs140e)
-courses(elective(1),cs142)
-courses(elective(1),cs143)
-courses(elective(1),cs144)
-courses(elective(1),cs145)
-courses(elective(1),cs146)
-courses(elective(1),cs147)
-courses(elective(1),cs148)
-courses(elective(1),cs149)
-courses(elective(1),cs151)
-courses(elective(1),cs154)
-courses(elective(1),cs155)
-courses(elective(1),cs157)
-courses(elective(1),cs163)
-courses(elective(1),cs166)
-courses(elective(1),cs168)
-courses(elective(1),cs190)
-courses(elective(1),cs195)
-courses(elective(1),cs197)
-courses(elective(1),cs205l)
-courses(elective(1),cs210a)
-courses(elective(1),cs217)
-courses(elective(1),cs223a)
-courses(elective(1),cs224n)
-courses(elective(1),cs224s)
-courses(elective(1),cs224u)
-courses(elective(1),cs224w)
-courses(elective(1),cs225a)
-courses(elective(1),cs227b)
-courses(elective(1),cs228)
-courses(elective(1),cs229)
-courses(elective(1),cs229m)
-courses(elective(1),cs229t)
-courses(elective(1),cs230)
-courses(elective(1),cs231a)
-courses(elective(1),cs231n)
-courses(elective(1),cs232)
-courses(elective(1),cs233)
-courses(elective(1),cs234)
-courses(elective(1),cs235)
-courses(elective(1),cs236)
-courses(elective(1),cs237a)
-courses(elective(1),cs237b)
-courses(elective(1),cs238)
-courses(elective(1),cs240)
-courses(elective(1),cs240lx)
-courses(elective(1),cs242)
-courses(elective(1),cs243)
-courses(elective(1),cs244)
-courses(elective(1),cs244b)
-courses(elective(1),cs245)
-courses(elective(1),cs246)
-courses(elective(1),cs247)
-courses(elective(1),cs248)
-courses(elective(1),cs251)
-courses(elective(1),cs252)
-courses(elective(1),cs254)
-courses(elective(1),cs254b)
-courses(elective(1),cs255)
-courses(elective(1),cs257)
-courses(elective(1),cs261)
-courses(elective(1),cs263)
-courses(elective(1),cs265)
-courses(elective(1),cs269i)
-courses(elective(1),cs269q)
-courses(elective(1),cs270)
-courses(elective(1),cs271)
-courses(elective(1),cs272)
-courses(elective(1),cs273a)
-courses(elective(1),cs273b)
-courses(elective(1),cs274)
-courses(elective(1),cs275)
-courses(elective(1),cs276)
-courses(elective(1),cs278)
-courses(elective(1),cs279)
-courses(elective(1),cs326)
-courses(elective(1),cs327a)
-courses(elective(1),cs329)
-courses(elective(1),cs330)
-courses(elective(1),cs334a)
-courses(elective(1),cs336)
-courses(elective(1),cs338)
-courses(elective(1),cs348a)
-courses(elective(1),cs348b)
-courses(elective(1),cs348c)
-courses(elective(1),cs348e)
-courses(elective(1),cs348i)
-courses(elective(1),cs348k)
-courses(elective(1),cs351)
-courses(elective(1),cs352)
-courses(elective(1),cs353)
-courses(elective(1),cs369l)
-courses(elective(1),cs371)
-courses(elective(1),cs379)
-courses(elective(1),cs398)
-courses(elective(1),cs428)
-courses(elective(1),econ286)
-courses(elective(1),ee180)
-courses(elective(1),ee263)
-courses(elective(1),ee278)
-courses(elective(1),ee282)
-courses(elective(1),ee364b)
-courses(elective(1),engr205)
-courses(elective(1),mse251)
-courses(elective(1),mse252)
-courses(elective(1),mse351)
-courses(elective(1),mse352)
-courses(elective(1),mse355)
-courses(elective(1),phil151)
-courses(elective(1),phil152)
-courses(elective(1),psych204a)
-courses(elective(1),psych204b)
-courses(elective(1),psych209)
-courses(elective(1),stats200)
-courses(elective(1),stats202)
-courses(elective(1),stats205)
-courses(elective(1),stats315a)
-courses(elective(1),stats315b)
-
-courses(elective(2),otherelective1)
-courses(elective(2),otherelective2)
-courses(elective(2),otherelective3)
-courses(elective(2),otherelective4)
+courses(depth(3),cs124)
+courses(depth(3),cs229)
+courses(depth(3),cs274)
+courses(depth(3),cs145)
+courses(depth(3),cs231a)
+courses(depth(3),cs275)
+courses(depth(3),cs147)
+courses(depth(3),cs235)
+courses(depth(3),cs279)
+courses(depth(3),cs148)
+courses(depth(3),cs248)
+courses(depth(3),cs221)
+courses(depth(3),cs270)
+courses(depth(3),cs228)
+courses(depth(3),cs273a)
 
 courses(senior(1),cs191)
 courses(senior(1),cs191w)
@@ -3011,8 +2706,7 @@ section(sciencesection(N))
 section(tissection(N))
 section(fundamentalsection(N))
 section(core(N))
-section(track(N))
-section(elective(N))
+section(depth(N))
 section(senior(N))
 
 select(X,Y) :: section(X) ==> josen(X,Y)
@@ -3030,34 +2724,43 @@ select(SECTION,COURSE) ::
 select(mathsection(1),X) ::
   math(M,X) & math(N,Y) & distinct(M,N) ==> ~josen(mathsection(1),Y)
 
-math(1,math41)
-math(1,math42)
 math(2,math19)
 math(2,math20)
 math(2,math21)
 math(3,mathap)
 
-
 select(mathsection(3),X) ::
-  mutexmath(N,X) & mutexmath(N,Y) ==> ~josen(mathsection(3),Y)
+  josen(mathsection(3),Y) ==> ~josen(mathsection(3),Y)
 
-mutexmath(1,cs157)
-mutexmath(1,phil151)
-mutexmath(2,cme103)
-mutexmath(2,ee103)
-mutexmath(2,engr108)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 select(sciencesection(1),X) ::
   josen(sciencesection(1),Y) ==> ~josen(sciencesection(1),Y)
 
+
 select(sciencesection(2),X) ::
-  josen(sciencesection(2),Y) ==> ~josen(sciencesection(2),Y)
+  science(M,X) & science(N,Y) & distinct(M,N) ==> ~josen(sciencesection(2),Y)
 
-select(sciencesection(3),X) ::
-  josen(sciencesection(3),Y) ==> ~josen(sciencesection(3),Y)
+science(2,chem31a)
+science(2,chem31b)
+science(3,chem31m)
+science(1,chemap)
 
+select(sciencesection(3),X) :: josen(sciencesection(3),X) 
+  
+select(sciencesection(4),X) ::
+  science(M,X) & science(N,Y) & distinct(M,N) ==> ~josen(sciencesection(4),Y)
+
+science(4,bio82)
+science(4,bio83)
+science(4,bio84)
+science(4,bio85)
+science(4,bio86)
+science(5,humbio2a)
+science(5,humbio3a)
+science(5,humbio4a)
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 select(tissection(1),X) ::
@@ -3090,14 +2793,18 @@ mutexgroup(3,engr40m)
 mutexgroup(4,cs106b)
 mutexgroup(4,cs106x)
 
-select(elective(1),cs334a) :: ~josen(elective(1),ee364a)
-select(elective(1),ee364a) :: ~josen(elective(1),cs334a)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 select(core(N),X) :: josen(core(N),Y) ==> ~josen(core(N),Y)
+select(depth(1),X) :: josen(depth(1),Y) ==> ~josen(depth(1),Y)
+select(depth(2),X) :: josen(depth(2),Y) ==> ~josen(depth(2),Y)
+select(depth(3),X) :: josen(depth(3),Y) ==> ~josen(depth(3),Y)
 
-select(track(3),X) :: josen(track(3),Y) ==> ~josen(track(3),Y)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+select(senior(1),X) ::
+  josen(senior(1),Y) ==> ~josen(senior(1),Y)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Styling
@@ -3117,17 +2824,13 @@ value(totalunits(mathscience), TOTAL) :- mathscienceunits(TOTAL)
 value(totalunits(fundamental), TOTAL) :- fundamentalunits(TOTAL)
 value(totalunits(tis), TOTAL) :- tisunits(TOTAL)
 value(totalunits(core), TOTAL) :- coreunits(TOTAL)
-value(totalunits(track), TOTAL) :- trackunits(TOTAL)
-value(totalunits(elective), TOTAL) :- electiveunits(TOTAL)
 value(totalunits(depth), TOTAL) :- depthunits(TOTAL)
+value(totalunits(elective), TOTAL) :- electiveunits(TOTAL)
 value(totalunits(senior), TOTAL) :- seniorunits(TOTAL)
 value(totalunits(cs), TOTAL) :- csunits(TOTAL)
 value(totalunits(ug), TOTAL) :- ugunits(TOTAL)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-style(track3approval, color, blue) :- josen(track(3),cs329)
-style(track3approval, color, "#888888") :- ~josen(track(3),cs329)
 
 
 style(soemath, color, "#0000ff") :- extramath
