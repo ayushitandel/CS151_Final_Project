@@ -301,6 +301,15 @@ unfounded(COURSE) :-
 
 before(X,Y) :- min(X,Y,X) & distinct(X,Y)
 
+prereqvalid(COURSE) :-
+  plan(COURSE,QTR2) &
+  plan(PREREQ,QTR1) &
+  before(QTR1,QTR2)
+  
+prereqvalid(COURSE) :-
+  plan(COURSE,directory) &
+  countofall(C,prereq(C,COURSE),0)
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% End of Rules
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
