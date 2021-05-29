@@ -1,0 +1,720 @@
+<html>
+
+<!--=========================================================================-->
+
+<head>
+  <title>BSCS Program Schedule</title>
+  <style name="worksheet" type="text/css">p{margin:0px;padding:0px;}</style>
+  <script src="http://epilog.stanford.edu/javascript/epilog.js"></script>
+  <script src="http://minimal.stanford.edu/worksheets/javascript/worksheets.js"></script>
+  <script>
+
+function initializeplan ()
+ {initialize();
+  var bulletin = document.getElementById('bulletin');
+  var courses = compfinds('C',read('course(C,D,N,T,U)'),datasets['catalog'],library);
+  for (var i=0; i<courses.length; i++)
+      {var option = document.createElement('option');
+       option.innerHTML = courses[i];
+       bulletin.add(option)};
+  var plan = compfinds(read('plan(C,Q)'),read('plan(C,Q)'),lambda,library);
+  for (var i=0; i<plan.length; i++)
+      {var widget = makecourse(plan[i][1]);
+       document.getElementById(plan[i][2]).appendChild(widget)};
+  var leftovers = compfinds('C',read('josen(S,C) & countofall(Q,plan(C,Q),0)'),lambda,library);
+  for (var i=0; i<leftovers.length; i++)
+      {var widget = makecourse(leftovers[i]);
+       document.getElementById('directory').appendChild(widget)};
+  return true}
+
+var quarters =
+ ['202101','202102','202103','202104',
+  '202201','202202','202203','202204',
+  '202301','202302','202303','202304',
+  '202401','202402','202403','202404'];
+
+function selectcourse (widget)
+ {var course = widget.value;
+  if (!compfindp(seq('plan',course,'QTR'),lambda,library))
+     {document.getElementById('directory').appendChild(makecourse(course));
+      savefact(seq('plan',course,'directory'),lambda)};
+  widget.value = 'blank';
+  return true}
+
+function deselect (ev)
+ {ev.preventDefault();
+  var course = ev.dataTransfer.getData("text");
+  for (var i=0; i<quarters.length; i++)
+      {document.getElementById(quarters[i]).style.backgroundColor = '#ffffff'};
+  var widget = document.getElementById(course);
+  var oldqtr = widget.parentNode.id;
+  dropfact(seq('plan',course,oldqtr),lambda);
+  widget.parentNode.removeChild(widget);
+  document.getElementById('lambda').value = grindem(lambda);
+  populatesheet()}
+
+function makecourse (course)
+ {var widget = document.createElement('div');
+  widget.id = course;
+  widget.setAttribute('style','width:106;border-radius:5px;border-width:2px; border-style: solid; border-color: gray;background-color:#eeeeee;text-align:center;padding-top:4px; padding-bottom:4px;cursor:pointer');
+  widget.setAttribute('draggable','true');
+  widget.setAttribute('ondragstart','drag(event)');
+  widget.innerHTML = course;
+  return widget}
+
+function drag (ev)
+ {ev.dataTransfer.setData("text", ev.target.id);
+  var course = ev.target.id;
+  for (var i=0; i<quarters.length; i++)
+      {if (!compfindp(seq('offered',course,quarters[i]),lambda,library))
+          {document.getElementById(quarters[i]).style.backgroundColor = '#eeeeee'}}}
+
+function allowDrop (event)
+ {event.preventDefault()}
+
+function drop (ev)
+ {ev.preventDefault();
+  var course = ev.dataTransfer.getData("text");
+  for (var i=0; i<quarters.length; i++)
+      {document.getElementById(quarters[i]).style.backgroundColor = '#ffffff'};
+  var widget = document.getElementById(course);
+  var oldqtr = widget.parentNode.id;
+  var newqtr = ev.target.id;
+  dropfact(seq('plan',course,oldqtr),lambda);
+  savefact(seq('plan',course,newqtr),lambda)
+  if (find(newqtr,quarters))
+     {ev.target.appendChild(widget)}
+     else {document.getElementById('directory').appendChild(widget)};
+  document.getElementById('lambda').value = grindem(lambda);
+  populatesheet()}
+
+  </script>
+</head>
+
+<!--=========================================================================-->
+
+<body  bgcolor='#990000' onload="initializeplan()">
+  <center>
+    <table width='720' cellspacing='0' cellpadding='0' bgcolor='#ffffff'>
+      <tr>
+        <td>
+
+<!--=======================================================================-->
+
+<center>
+  <br/>
+<h2 style="margin-top:0px;padding-top:0px;font-size:1.2em">DEPARTMENT OF COMPUTER SCIENCE<br>
+BSCS Program Schedule<br></h2>
+</center>
+
+<!--=========================================================================-->
+
+<center>
+  <table bgcolor='#ffffff'>
+    <tr>
+      <td>
+
+<center>
+  <table>
+    <tr>
+      <td colspan='3' style=';text-align:center;color:#888888'>
+Use the selector to add courses to your program.<br/>
+Drag courses from program to quarters to add to schedule.<br/>
+Drag courses to selector to delete.<br/>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+<table width='160' height='480'>
+  <tr>
+    <td height='20' ondragover='allowDrop(event)' ondrop='deselect(event)'>
+<select id='bulletin' onchange='selectcourse(this)'>
+  <option value='blank'></option>
+</select>
+    </td>
+  </tr>
+  <tr>
+    <td id='directory' valign='top' ondragover='allowDrop(event)' ondrop='drop(event)'></td>
+  </tr>
+</table>
+
+      </td>
+      <td>
+
+  <table width='640' cellspacing='0' border='1'>
+    <tr bgcolor='#eeeeee'>
+      <th width='60'>Year</th>
+      <th width='120'>Autumn</th>
+      <th width='120'>Winter</th>
+      <th width='120'>Spring</th>
+      <th width='120'>Summer</th>
+    </tr>
+    <tr height='120'>
+      <th width='60' bgcolor='#eeeeee' valign='center'>2021</th>
+      <td id='202101' width='120' align='center' valign='top' ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202102' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202103' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202104' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+    </tr>
+    <tr height='120'>
+      <th width='60' bgcolor='#eeeeee' valign='center'>2022</th>
+      <td id='202201' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202202' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202203' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202204' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+    </tr>
+    <tr height='120'>
+      <th width='60' bgcolor='#eeeeee' valign='center'>2023</th>
+      <td id='202301' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202302' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202303' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202304' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+    </tr>
+    <tr height='120'>
+      <th width='60' bgcolor='#eeeeee' valign='center'>2024</th>
+      <td id='202401' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202402' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202403' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+      <td id='202404' width='120' align='center' valign='top'  ondragover='allowDrop(event)' ondrop='drop(event)'>
+      </td>
+    </tr>
+  </table>
+
+      </td>
+      <td>
+<table width='80'>
+</table>
+      </td>
+    </tr>
+  </table>
+  <br/>
+  <form id='submitform' action='ugpsupdateprogramplan.php' method='post'>
+    <input type='hidden' id='sheet' name='sheet' value='sheet_1547581045305' />
+    <input type='hidden' id='type' name='type' value='ugcs_2019_unspecialized' />
+    <input type='hidden' id='student' name='student' value='mkucera' />
+    <input type='hidden' id='submitstructure' name='data' value='' />
+    <input type='hidden' id='submitbutton' name='command' value='record' />
+    <input id='save' type='button' value='Save' style='font-family:times;font-size:18px;background-color:#eeeeee;width:100' onclick='doSubmit("save")'/>
+  </form>
+  <br/>
+</center>
+
+
+
+      </td>
+    </tr>
+  </table>
+</center>
+
+<!--=========================================================================-->
+
+        </td>
+      </tr>
+    </table>
+  </center>
+</body>
+
+<!--=========================================================================-->
+
+<center>
+<textarea id='lambda' style='font-face:courier' rows='10' cols='80'>
+plan(cs151,directory)
+plan(cs157,directory)
+plan(cs204,directory)
+plan(cs227b,directory)
+</textarea>
+</center>
+
+<!--=======================================================================-->
+
+<textarea id="library" style="display:none" type="text/hrf">
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Catalog
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+prereq(cs157,cs204)
+prereq(cs151,cs227b)
+
+offered(cs151,202103)
+offered(cs151,202203)
+offered(cs151,202303)
+offered(cs151,202403)
+offered(cs157,202101)
+offered(cs157,202201)
+offered(cs157,202301)
+offered(cs157,202401)
+offered(cs204,202102)
+offered(cs204,202302)
+offered(cs227b,202203)
+offered(cs227b,202403)
+offered(cs228,202102)
+offered(cs228,202202)
+offered(cs228,202302)
+offered(cs228,202402)
+offered(cs229,202201)
+offered(cs229,202203)
+offered(cs229,202301)
+offered(cs229,202403)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Sheet Initialization
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+value(type,ugcs_2019_ai)
+value(sheet,S) :- true(josen(sheet,S),metadata)
+value(student,S) :- true(josen(student,S),metadata)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Styling
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+style(QUARTER,"backgroundColor","#eeeeee") :-
+  dragging(COURSE) & ~offered(COURSE,QUARTER)
+
+style(COURSE,"backgroundColor","#ffeeee") :-
+  unfounded(COURSE)
+
+style(COURSE,"backgroundColor","#eeeeee") :-
+  offered(COURSE,QTR) & ~unfounded(COURSE)
+
+unfounded(COURSE) :-
+  plan(COURSE,QTR) &
+  distinct(QTR,directory) &
+  prereq(PREREQ,COURSE) &
+  countofall(Q,plan(PREREQ,Q) & distinct(Q,directory),0)
+
+before(X,Y) :- min(X,Y,X) & distinct(X,Y)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% End of Rules
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+</textarea>
+
+<!--=========================================================================-->
+
+<!--=======================================================================-->
+
+<dataset id="catalog" style="display:none;" type="text/hrf">
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% Catalog 2019-2020
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+course(aa252,"aa","252","Techniques of Failure Analysis",3)
+course(archlgy151,"ARCHLGY","151","Ten Things: An Archaeology of Design",3)
+course(artstudi160,"ARTSTUDI","160","Intro to Digital / Physical Design",3)
+course(artstudi162,"ARTSTUDI","162","Embodied Interfaces",4)
+course(artstudi163,"ARTSTUDI","163","Drawing with Code",4)
+course(artstudi164,"ARTSTUDI","164","Design in Public Spaces",4)
+course(artstudi165,"ARTSTUDI","165","Social Media and Performative Practices",4)
+course(artstudi168,"ARTSTUDI","168","Data as Material",4)
+course(artstudi170,"ARTSTUDI","170","Photography I: Black and White",4)
+course(artstudi179,"ARTSTUDI","179","Digital Art I",4)
+course(artstudi264,"ARTSTUDI","264","Advanced Interaction Design",4)
+course(artstudi266,"ARTSTUDI","266","Sculptural Screens / Malleable Media",4)
+course(artstudi267,"ARTSTUDI","267","Emerging Technology Studio",4)
+course(appphys294,"APPPHYS","294","Cellular Biophysics",3)
+course(bio30,"BIO","30","Ecology for Everyone",4)
+course(bio45,"BIO","45","Introduction to Laboratory Research in Cell and Molecular Biology",4)
+course(bio46,"BIO","46","Introduction to Research in Ecology and Evolutionary Biology",4)
+course(bio47,"BIO","47","Introduction to Research in Ecology and Evolutionary Biology",4)
+course(bio81,"BIO","81","Introduction to Ecology",4)
+course(bio82,"BIO","82","Genetics",4)
+course(bio83,"BIO","83","Biochemistry & Molecular Biology",4)
+course(bio84,"BIO","84","Physiology",4)
+course(bio85,"BIO","85","Evolution",4)
+course(bio86,"BIO","86","Cell Biology",4)
+course(bio104,"BIO","104","Advance Molecular Biology: Epigenetics and Proteostasi",5)
+course(bio112,"BIO","112","Human Physiology",4)
+course(bio118,"BIO","118","Genetic Analysis of Biological Processes",4)
+course(bio158,"BIO","158","Developmental Neurobiology",4)
+course(bio183,"BIO","183","Theoretical Population Genetics",3)
+course(bio214,"BIO","214","Advanced Cell Biology",4)
+course(bio217,"BIO","217","Translational Bioinformatics",4)
+course(bio230,"BIO","230","Molecular and Cellular Immunology",4)
+course(bioc241,"BIOC","241","Biological Macromolecules ",5)
+course(bioe101,"BIOE","101","Systems Biology",3)
+course(bioe131,"BIOE","131","Ethics in Bioengineering",3)
+course(bioe220,"BIOE","220","Introduction to Imaging and Image-based Human Anatomy",3)
+course(cee63,"CEE","63","Weather and Storms",3)
+course(cee70,"CEE","70","Environmental Science and Technology",3)
+course(chem31a,"CHEM","31A","Chemical Principles I",5)
+course(chem31b,"CHEM","31B","Chemical Principles II",5)
+course(chem31m,"CHEM","31M","Chemical Principles: From Molecules to Solids",5)
+course(chem31x,"CHEM","31X","Chemical Principles (Accelerated)",5)
+course(chem33,"CHEM","33","Structure and Reactivity of Organic Molecules",5)
+course(chem35,"CHEM","35","Synthetic and Physical Organic Chemistry",5)
+course(chem141,"CHEM","141","The Chemical Principles of Life I",4)
+course(chem171,"CHEM","171","Physical Chemistry I",4)
+course(chemap,"","","AP Chemistry",5)
+course(chemeng150,"CHEMENG","150","Biochemical Engineering",3)
+course(chemeng174,"CHEMENG","174","Environmental Microbiology I",3)
+course(cme100,"CME","100","Vector Calculus for Engineers",5)
+course(cme102,"CME","102","Ordinary Differential Equations for Engineers",5)
+course(cme103,"CME","103","Introduction to Matrix Methods",5)
+course(cme104,"CME","104","Linear Algebra and Partial Differential Equations for Engineers",3)
+course(cme108,"CME","108","Introduction to Scientific Computing",3)
+course(cme302,"CME","302","Numerical Linear Algebra",3)
+course(cme305,"CME","305","Discrete Mathematics and Algorithms",3)
+course(cme306,"CME","306","Numerical Solution of Partial Differential Equations",3)
+course(comm124,"COMM","124","Lies, Trust, and Tech",5)
+course(comm120w,"COMM","120W","The Rise of Digital Culture",5)
+course(comm166,"COMM","166","Virtual People",5)
+course(comm172,"COMM","172","Media Psychology",5)
+course(comm224,"COMM","224","Lies, Trust, and Tech",4)
+course(comm254,"COMM","254","The Politics of Algorithms",4)
+course(comm272,"COMM","272","Media Psychology",4)
+course(comm314,"COMM","314","Ethnographic Methods",1)
+course(comm324,"COMM","324","Language and Technology",3)
+course(cs103,"CS","103","Mathematical Foundations of Computing",5)
+course(cs106b,"CS","106B","Programming Abstractions",5)
+course(cs106x,"CS","106X","Programming Abstractions (Accelerated)",5)
+course(cs107,"CS","107","Computer Organization and Systems",5)
+course(cs107e,"CS","107e","Computer Systems from the Ground Up",5)
+course(cs108,"CS","108","Object-Oriented Systems Design",4)
+course(cs109,"CS","109","Introduction to Probability for Computer Scientists",5)
+course(cs110,"CS","110","Principles of Computer Systems",5)
+course(cs124,"CS","124","From Languages to Information",4)
+course(cs131,"CS","131","Computer Vision: Foundations and Applications",4)
+course(cs140,"CS","140","Operating Systems and Systems Programming",4)
+course(cs140e,"CS","140E","Operating systems design and implementation",4)
+course(cs141,"CS","141","Introduction to Computer Sound",3)
+course(cs142,"CS","142","Web Applications",3)
+course(cs143,"CS","143","Compilers",4)
+course(cs144,"CS","144","Introduction to Computer Networking",4)
+course(cs145,"CS","145","Introduction to Databases",4)
+course(cs146,"CS","146","Introduction to Game Design and Development",3)
+course(cs147,"CS","147","Introduction to Human-Computer Interaction Design",5)
+course(cs148,"CS","148","Introduction to Computer Graphics and Imaging",4)
+course(cs149,"CS","149","Parallel Computing",4)
+course(cs151,"CS","151","Logic Programming",3)
+course(cs154,"CS","154","Introduction to Automata and Complexity Theory",4)
+course(cs155,"CS","155","Computer and Network Security",3)
+course(cs157,"CS","157","Computational Logic",3)
+course(cs161,"CS","161","Design and Analysis of Algorithms",5)
+course(cs166,"CS","166","Data Structures",4)
+course(cs168,"CS","168","The Modern Algorithmic Toolbox",4)
+course(cs181,"CS","181","Computers, Ethics, and Public Policy",4)
+course(cs181w,"CS","181W","Computers, Ethics, and Public Policy",4)
+course(cs182w,"CS","182W","Ethics, Public Policy, and Technological Change",5)
+course(cs190,"CS","190","Software Design Studio",3)
+course(cs191,"CS","191","Senior Project",6)
+course(cs191w,"CS","191W","Writing Intensive Senior Project",6)
+course(cs194,"CS","194","Software Project",3)
+course(cs194h,"CS","194H","User Interface Design Project",4)
+course(cs194w,"CS","194W","Software Project (WIM)",3)
+course(cs195,"CS","195","Supervised Undergraduate Research",4)
+course(cs197,"CS","197","Computer Science Research",3)
+course(cs205b,"CS","205B","Mathematical Methods for Fluids, Solids, and Interfaces",3)
+course(cs205l,"CS","205L","Exploring Computational Journalism",3)
+course(cs206,"CS","206","Continuous Mathematical Methods with an Emphasis on Machine Learning",3)
+course(cs210a,"CS","210A","Software Project Experience with Corporate Partners",4)
+course(cs210b,"CS","210B","Software Project Experience with Corporate Partners",4)
+course(cs217,"CS","217","Hardware Accelerators for Machine Learning",4)
+course(cs221,"CS","221","Artificial Intelligence: Principles and Techniques",4)
+course(cs223a,"CS","223A","Introduction to Robotics",3)
+course(cs224n,"CS","224N","Natural Language Processing with Deep Learning",4)
+course(cs224s,"CS","224S","Spoken Language Processing",4)
+course(cs224u,"CS","224U","Natural Language Understanding",4)
+course(cs224w,"CS","224W","Machine Learning with Graphs",4)
+course(cs225a,"CS","225A","Experimental Robotics",3)
+course(cs227b,"CS","227B","Genereal Game Playing",3)
+course(cs228,"CS","228","Probabilistic Graphical Models: Principles and Techniques",4)
+course(cs229,"CS","229","Machine Learning",4)
+course(cs229t,"CS","229T","Statistical Learning Theory",3)
+course(cs230,"CS","230","Deep Learning",4)
+course(cs231a,"CS","231A","Computer Vision: From 3D Reconstruction to Recognition",4)
+course(cs231n,"CS","231N","Convolutional Neural Networks for Visual Recognition",4)
+course(cs232,"CS","232","Digital Image Processing",3)
+course(cs233,"CS","233","Geometric and Topological Data Analysis",3)
+course(cs234,"CS","234","Reinforcement Learning",3)
+course(cs235,"CS","235","Computational Genomics",3)
+course(cs236,"CS","236","Deep Generative Models",3)
+course(cs237a,"CS","237A","Principles of Robot Autonomy I",3)
+course(cs237b,"CS","237B","Principles of Robot Autonomy II",3)
+course(cs238,"CS","238","Decision Making under Uncertainty",4)
+course(cs240,"CS","240","Advanced Topics in Operating Systems",3)
+course(cs241,"CS","241","Embedded Systems Workshop",3)
+course(cs242,"CS","242","Programming Languages",3)
+course(cs243,"CS","243","Program Analysis and Optimizations",4)
+course(cs244,"CS","244","Advanced Topics in Networking",4)
+course(cs244b,"CS","244B","Distributed Systems",3)
+course(cs245,"CS","245","Principles of Data-Intensive Systems",3)
+course(cs246,"CS","246","Mining Massive Data Sets",4)
+course(cs247,"CS","247","Human-Computer Interaction Design Studio",3)
+course(cs247a,"CS","247A","Design for Artificial Intelligence",3)
+course(cs247g,"CS","247G","Introduction to Game Design",3)
+course(cs247i,"CS","247I","Design for Understanding",3)
+course(cs247s,"CS","247S","Service Design",3)
+course(cs248,"CS","248","Interactive Computer Graphics",4)
+course(cs250,"CS","250","Algebraic Error Correcting Codes",3)
+course(cs251,"CS","251","Cryptocurrencies and blockchain technologies",3)
+course(cs252,"CS","252","Analysis of Boolean Functions",3)
+course(cs254,"CS","254","Computational Complexity",3)
+course(cs254b,"CS","254B","Computational Complexity II",3)
+course(cs255,"CS","255","Introduction to Cryptography",3)
+course(cs257,"CS","257","Logic and Artificial Intelligence",2)
+course(cs261,"CS","261","Optimization and Algorithmic Paradigms",3)
+course(cs263,"CS","263","Algorithms for Modern Data Models",3)
+course(cs264,"CS","264","Beyond Worst-Case Analysis",3)
+course(cs265,"CS","265","Randomized Algorithms and Probabilistic Analysis",3)
+course(cs267,"CS","267","Graph Algorithms",3)
+course(cs268,"CS","268","Geometric Algorithms",3)
+course(cs269g,"CS","269G","Almost Linear Time Graph Algorithms",3)
+course(cs269i,"CS","269I","Incentives in Computer Science",3)
+course(cs269q,"CS","269Q","Elements of Quantum Computer Programming",3)
+course(cs270,"CS","270","Modeling Biomedical Systems: Ontology, Terminology, Problem Solving",3)
+course(cs272,"CS","272","Introduction to Biomedical Informatics Research Methodology",5)
+course(cs273a,"CS","273A","The Human Genome Source Code",3)
+course(cs273b,"CS","273B","Deep Learning in Genomics and Biomedicine",3)
+course(cs274,"CS","274","Representations and Algorithms for Computational Molecular Biology",4)
+course(cs275,"CS","275","Translational Bioinformatics",4)
+course(cs276,"CS","276","Information Retrieval and Web Search",3)
+course(cs278,"CS","278","Social Computing",3)
+course(cs279,"CS","279","Computational Biology: Structure and Organization of Biomolecules and Cells",3)
+course(cs294,"CS","294","Research Project",3)
+course(cs294w,"CS","294W","Writing Intensive Research Project in Computer Science",3)
+course(cs316,"CS","316","Advanced Multi-Core Systems",3)
+course(cs326,"CS","326","Topics in Advanced Robotic Manipulation",3)
+course(cs327a,"CS","327A","Advanced Robotic Manipulation",3)
+course(cs329,"CS","329","Topics in Artificial Intelligence",3)
+course(cs330,"CS","330","Deep Multi-task and Meta Learning",3)
+course(cs334,"CS","334","Convex Optimization I",3)
+course(cs334a,"CS","334A","Convex Optimization I",3)
+course(cs336,"CS","336","Robot Perception and Decision-Making: Optimal and Learning-based Approaches",3)
+course(cs341,"CS","341","Project in Mining Massive Data Sets",3)
+course(cs342,"CS","342","Building for Digital Health",3)
+course(cs344,"CS","344","Topics in Computer Networks",3)
+course(cs345,"CS","345","Data-intensive Systems for the Next 1000x",3)
+course(cs347,"CS","347","Human-Computer Interaction Research",3)
+course(cs349,"CS","349","Topics in Programming Systems",3)
+course(cs348a,"CS","348A","Computer Graphics: Geometric Modeling & Processing",3)
+course(cs348b,"CS","348B","Computer Graphics: Image Synthesis Techniques",4)
+course(cs348c,"CS","348C","Computer Graphics: Animation and Simulation",3)
+course(cs348e,"CS","348E","Character Animation: Modeling, Simulation, and Control of Human Motion",3)
+course(cs348k,"CS","348K","Visual Computing Systems",4)
+course(cs352,"CS","352","Pseudo-Randomness",3)
+course(cs353,"CS","353","The Practice of Theory Research",3)
+course(cs354,"CS","354","Topics in Intractability: Unfulfilled Algorithmic Fantasies",3)
+course(cs355,"CS","355","Advanced Topics in Cryptography",3)
+course(cs357,"CS","357","Advanced Topics in Formal Methods",3)
+course(cs358,"CS","358","Topics in Programming Language Theory",3)
+course(cs359,"CS","359","Topics in the Theory of Computation",3)
+course(cs364a,"CS","364a","Convex Optimization I",3)
+course(cs369,"CS","369","Topics in Analysis of Algorithms",3)
+course(cs369l,"CS","369L","Algorithmic Perspective on Machine Learning",3)
+course(cs371,"CS","371","Computational Biology in Four Dimensions",3)
+course(cs373,"CS","373","Statistical and Machine Learning Methods for Genomics",3)
+course(cs376,"CS","376","Human-Computer Interaction Research",3)
+course(cs377,"CS","377","Topics in Human-Computer Interaction",3)
+course(cs379,"CS","379","Interdisciplinary Topics",3)
+course(cs398,"CS","398","Computational Education",4)
+course(cs428,"CS","428","Computation and Cognition: The Probabilistic Approach",3)
+course(cs448,"CS","448","Topics in Computer Graphics",3)
+course(cs448b,"CS","448B","Data Visualization",3)
+course(dbio210,"DBIO","210","Developmental Biology",4)
+course(earth10,"EARTH","10","Design for a Habitable Planet",1)
+course(econ286,"ECON","286","Game Theory and Economic Applications",2)
+course(educ191,"EDUC","191","Introduction to Survey Research",3)
+course(educ236,"EDUC","236","Beyond Bits and Atoms: Designing Technological Tools",3)
+course(educ281,"EDUC","281","Technology for Learners",3)
+course(educ239,"EDUC","239","Educating Young STEM Thinkers",3)
+course(educ342,"EDUC","342","Child Development and New Technologies",3)
+course(ee101a,"EE","101A","Circuits I",4)
+course(ee101b,"EE","101B","Circuits II",4)
+course(ee102a,"EE","102A","Signal Processing and Linear Systems I",4)
+course(ee102b,"EE","102B","Signal Processing and Linear Systems II",4)
+course(ee103,"EE","103","Introduction to Matrix Methods",3)
+course(ee108,"EE","108","Digital System Design",4)
+course(ee109,"EE","109","Digital System Design Lab",4)
+course(ee168,"EE","168","Introduction to Digital Image Processing",3)
+course(ee179,"EE","179","Analog and Digital Communication Systems",3)
+course(ee180,"EE","180","Digital Systems Architecture",4)
+course(ee262,"EE","262","Two-Dimensional Imaging",3)
+course(ee263,"EE","263","Introduction to Linear Dynamical Systems",3)
+course(ee264,"EE","264","Digital Signal Processing",3)
+course(ee271,"EE","271","Introduction to VLSI Systems",3)
+course(ee273,"EE","273","Digital Systems Engineering",3)
+course(ee278,"EE","278","Introduction to Statistical Signal Processing",3)
+course(ee282,"EE","282","Computer Systems Architecture",3)
+course(ee364a,"EE","364A","Convex Optimization I",4)
+course(ee364b,"EE","364B","Convex Optimization II",4)
+course(ee368,"EE","368","Digital Image Processing",3)
+course(ee382c,"EE","382C","Interconnection Networks",3)
+course(ee384a,"EE","384A","Internet Routing Protocols and Standards",3)
+course(ee384c,"EE","384C","Wireless Local and Wide Area Networks",3)
+course(ee384s,"EE","384S","Performance Engineering of Computer Systems & Networks",3)
+course(engr10,"ENGR","10","Introduction to Engineering Analysis",4)
+course(engr14,"ENGR","14","Intro to Solid Mechanics",3)
+course(engr15,"ENGR","15","Dynamics",3)
+course(engr20,"ENGR","20","Introduction to Chemical Engineering",4)
+course(engr21,"ENGR","21","Engineering of Systems",3)
+course(engr25b,"ENGR","25B","Biotechnology",3)
+course(engr25e,"ENGR","25E","Energy: Chemical Transformations for Production, Storage, and Use",3)
+course(engr40a,"ENGR","40A","Introductory Electronics",3)
+course(engr40b,"ENGR","40B","Introductory Electronics Part II",2)
+course(engr40m,"ENGR","40M","An Intro to Making: What is EE",5)
+course(engr42,"ENGR","42","Introduction to Electromagnetics and Its Applications",5)
+course(engr50,"ENGR","50","Introduction to Materials Science, Nanotechnology Emphasis",4)
+course(engr50e,"ENGR","50E","Introduction to Materials Science, Energy Emphasis",4)
+course(engr50m,"ENGR","50M","Introduction to Materials Science, Biomaterials Emphasis",4)
+course(engr60,"ENGR","60","Engineering Economics and Sustainability",3)
+course(engr62,"ENGR","62","Introduction to Optimization",4)
+course(engr62x,"ENGR","62X","Introduction to Optimization (Accelerated)",4)
+course(engr80,"ENGR","80","Introduction to Bioengineering (Engineering Living Matter)",4)
+course(engr105,"ENGR","105","Feedback Control Design",3)
+course(engr117,"ENGR","117","Expanding Engineering Limits: Culture, Diversity, and Equity",3)
+course(engr131,"ENGR","131","Ethical Issues in Engineering",4)
+course(engr145,"ENGR","145","Technology Entrepreneurship",4)
+course(engr148,"ENGR","148","Principled Entrepreneurial Decisions",3)
+course(engr205,"ENGR","205","Introduction to Control Design Techniques",3)
+course(engr207b,"ENGR","207B","Linear Control Systems II",3)
+course(engr248,"ENGR","248","Principled Entrepreneurial Decisions",3)
+course(fundamentalelective1,"","","Elective",3)
+course(fundamentalelective2,"","","Elective",3)
+course(fundamentalelective3,"","","Elective",3)
+course(fundamentalelective4,"","","Elective",3)
+course(gene211,"GENE","211","Genomics",3)
+course(gs1,"GEO","1","Introduction to Geology",5)
+course(humbio2a,"HUMBIO","2A","Genetics, Evolution, and Ecology",5)
+course(humbio3a,"HUMBIO","3A","Cell and Developmental Biology",5)
+course(humbio4a,"HUMBIO","4A","The Human Organism",5)
+course(humbio82a,"HUMBIO","82A","Qualitative Research Methodology",3)
+course(humbio174,"HUMBIO","174","Foundations of Bioethics",3)
+course(math19,"MATH","19","Calculus",3)
+course(math20,"MATH","20","Calculus",3)
+course(math21,"MATH","21","Calculus",4)
+course(math41,"MATH","41","Calculus (Accelerated)",5)
+course(math42,"MATH","42","Calculus (Accelerated)",5)
+course(math51,"MATH","51","Linear Algebra, Multivariable Calculus, and Modern Applications",5)
+course(math52,"MATH","52","Integral Calculus of Several Variables",5)
+course(math53,"MATH","53","Ordinary Differential Equations with Linear Algebra",5)
+course(math104,"MATH","104","Applied Matrix Theory",3)
+course(math107,"MATH","107","Graph Theory",3)
+course(math108,"MATH","108","Introduction to Combinatorics and Its Applications",3)
+course(math109,"MATH","109","Applied Group Theory",3)
+course(math110,"MATH","110","Applied Number Theory and Field Theory",3)
+course(math113,"MATH","113","Linear Algebra and Matrix Theory",3)
+course(mathap,"","","AP or IB Calculus",10)
+course(mathelective1,"","","Elective",3)
+course(mathelective2,"","","Elective",3)
+course(mathelective3,"","","Elective",3)
+course(mathelective4,"","","Elective",3)
+course(me101,"ME","101","Visual Thinking",4)
+course(me115a,"ME","115A","Introduction to Human Values in Design",3)
+course(me203,"ME","203","Design and Manufacturing",4)
+course(me210,"ME","210","Introduction to Mechatronics",4)
+course(me216a,"ME","216A","Advanced Product Design: Needfinding",3)
+course(me216m,"ME","216M","Introduction to the Design of Smart Products",4)
+course(me267,"ME","267","Ethics and Equity in Transportation Systems",3)
+course(me281,"ME","281","Biomechanics of Movement",3)
+course(mse125,"MS&E","125","Introduction to Applied Statistics",4)
+course(mse152,"MS&E","152","Introduction to Decision Analysis",4)
+course(mse185,"MS&E","185","Global Work",4)
+course(mse193,"MS&E","193","Technology and National Security: Past, Present, and Future",3)
+course(mse231,"MS&E","231","Introduction to Computational Social Science",3)
+course(mse251,"MS&E","251","Introduction to Stochastic Control with Applications",3)
+course(mse252,"MS&E","252","Decision Analysis I: Foundations of Decision Analysis",4)
+course(mse310,"MS&E","310","Linear Programming",3)
+course(mse330,"MS&E","330","Law, Bias, & Algorithms",3)
+course(mse351,"MS&E","351","Dynamic Programming and Stochastic Control",3)
+course(mse352,"MS&E","352","Decision Analysis I: Foundations of Decision Analysis",3)
+course(mse355,"MS&E","355","Influence Diagrams and Probabilistics Networks",3)
+course(music220a,"MUSIC","220A","Fundamentals of Computer-Generated Sound",2)
+course(music220b,"MUSIC","220B","Compositional Algorithms, Psychoacoustics, and Computational Music",2)
+course(music220c,"MUSIC","220C","Research Seminar in Computer-Generated Music",2)
+course(music250a,"MUSIC","250A","Physical Interaction Design for Music",3)
+course(music256a,"MUSIC","256A","Music, Computing, Design I: Art of Design for Computer Music",3)
+course(otherelective1,"","","Elective",3)
+course(otherelective2,"","","Elective",3)
+course(otherelective3,"","","Elective",3)
+course(otherelective4,"","","Elective",3)
+course(othertis,"","","Elective",4)
+course(phil151,"PHIL","151","Metalogic",4)
+course(phil152,"PHIL","152","Computability and Logic",4)
+course(phys21,"PHYS","21","Mechanics, Fluids, and Heat",4)
+course(phys22,"PHYS","22","Mechanics, Fluids, and Heat Laboratory",1)
+course(phys23,"PHYS","23","Electricity, Magnetism, and Optics",4)
+course(phys24,"PHYS","24","Electricity, Magnetism, and Optics Laboratory",1)
+course(phys25,"PHYS","25","Modern Physics",4)
+course(phys26,"PHYS","26","Modern Physics Laboratory",1)
+course(phys41,"PHYS","41","Mechanics",4)
+course(phys41e,"PHYS","41e","Mechanics, Concepts, Calculations, and Context",5)
+course(phys42,"PHYS","42","Classical Mechanics Laboratory",1)
+course(phys43,"PHYS","43","Electricity and Magnetism",4)
+course(phys44,"PHYS","44","Electricity and Magnetism Lab",1)
+course(phys45,"PHYS","45","Light and Heat",4)
+course(phys46,"PHYS","46","Light and Heat Laboratory",1)
+course(phys61,"PHYS","61","Mechanics and Special Relativity",4)
+course(phys62,"PHYS","62","Mechanics Laboratory",1)
+course(phys63,"PHYS","63","Electricity, Magnetism, and Waves",4)
+course(phys64,"PHYS","64","Electricity, Magnetism and Waves Laboratory",1)
+course(phys65,"PHYS","65","Quantum and Thermal Physics",4)
+course(phys67,"PHYS","67","Introduction to Laboratory Physics",2)
+course(physapb,"","","AP Physics B",5)
+course(physapmech,"","","AP Physics (Mechanics)",5)
+course(polisci114s,"POLISCI","114S","International Security in a Changing World",5)
+course(psych35,"PSYCH","35","Minds and Machines",4)
+course(psych45,"PSYCH","45","Introduction to Learning and Memory",3)
+course(psych50,"PSYCH","50","Introduction to Cognitive Neuroscience",3)
+course(psych60,"PSYCH","60","Introduction to Developmental Psychology",3)
+course(psych70,"PSYCH","70","Self and Society: Introduction to Social Psychology",4)
+course(psych75,"PSYCH","75","Introduction to Cultural Psychology",5)
+course(psych80,"PSYCH","80","Introduction to Personality and Affective Science",3)
+course(psych90,"PSYCH","90","Introduction to Clinical Psychology: A Neuroscience Perspective",3)
+course(psych95,"PSYCH","95"," Introduction to Abnormal Psychology",3)
+course(psych251,"PSYCH","251","Experimental Methods",3)
+course(psych253,"PSYCH","253","Advanced Statistical Modeling",3)
+course(psych30,"PSYCH","30","Introduction to Perception",3)
+course(psych204a,"PSYCH","204a","Human Neuroimaging Methods",3)
+course(psych204b,"PSYCH","204b","Computational Neuroimaging: Methods & Analyses",3)
+course(psych209,"PSYCH","209","Neural Network Models of Cognition: Principles and Applications",4)
+course(psych221,"PSYCH","221","Image Systems Engineering",1)
+course(scienceelective1,"","","Elective",3)
+course(scienceelective2,"","","Elective",3)
+course(scienceelective3,"","","Elective",3)
+course(scienceelective4,"","","Elective",3)
+course(stats141,"STATS","141","Biostatistics",5)
+course(stats200,"STATS","200","Introduction to Statistical Inference",3)
+course(stats202,"STATS","202","Data Mining and Analysis",3)
+course(stats203,"STATS","203","Introduction to Regression Models and Analysis of Variance",3)
+course(stats205,"STATS","205","Introduction to Nonparametric Statistics",3)
+course(stats206,"STATS","206","Applied Multivariate Analysis",3)
+course(stats215,"STATS","215","Statistical Models in Biology",3)
+course(stats315a,"STATS","315A","Modern Applied Statistics: Learning",3)
+course(stats315b,"STATS","315B","Modern Applied Statistics: Data Mining",3)
+course(sts1,"STS","1","The Public Life of Science and Technology",4)
+course(surg101,"SURG","101","Regional Study of Human Structure",5)
+course(symsys245,"SYMSYS","245","Cognition in Interaction Design",3)
+course(trackelective1,"","","Elective",3)
+course(trackelective2,"","","Elective",3)
+course(trackelective3,"","","Elective",3)
+course(trackelective4,"","","Elective",3)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% End of Data
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+</dataset>
+
+<!--=======================================================================-->
+
+</body>
+
+<!--=======================================================================-->
+
+</html>
