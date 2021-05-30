@@ -30,7 +30,7 @@
       background-color: #fe0;
     }
     .invalid {
-      background-color: #f00;
+      background-color: #faa;
     }
   </style>
   <script src="http://epilog.stanford.edu/javascript/epilog.js"></script>
@@ -353,18 +353,30 @@ attribute(QUARTER,"class","valid") :-
 
 attribute(COURSE,"class","course invalid") :-
   true(course(COURSE,_,_,_,_), catalog) &
-  unfounded(COURSE)
+  invalid(COURSE)
 
 attribute(COURSE, "class", "course") :-
-  offered(COURSE,QTR) & ~unfounded(COURSE)
+  offered(COURSE,QTR) & ~invalid(COURSE)
+
+attribute(COURSE, "class", "course") :-
+  plan(COURSE, QTR) & same(QTR, directory)
 
 before(X,Y) :- min(X,Y,X) & distinct(X,Y)
 
-unfounded(COURSE) :-
+%% A course is invalid if it has a prereq and the prereq
+%% is never scheduled before it
+invalid(COURSE) :-
   plan(COURSE,QTR) &
   distinct(QTR,directory) &
   prereq(PREREQ,COURSE) &
   countofall(Q,plan(PREREQ,Q) & distinct(Q,directory) & before(Q, QTR),0)
+
+%% A course is invalid if it is planned in a quarter where it is not offered
+invalid(COURSE) :-
+  plan(COURSE,QTR) &
+  distinct(QTR,directory) &
+  ~offered(COURSE,QTR)
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% End of Rules
