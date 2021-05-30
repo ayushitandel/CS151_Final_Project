@@ -105,9 +105,6 @@ function drop (ev)
   <br/>
 <h2 style="margin-top:0px;padding-top:0px;font-size:1.2em">DEPARTMENT OF COMPUTER SCIENCE<br>
 BSCS Program Schedule<br></h2>
-<!-- This is a dummy debug element. Currently it displays the unit count in -->
-<!-- 202102 for testing purposes. -->
-<h1 id='dummy'></h1>
 </center>
 
 <!--=========================================================================-->
@@ -289,7 +286,7 @@ value(student,S) :- true(josen(student,S),metadata)
 
 % Relates a quarter with the courses offered in it
 courses_in_quarter(Quarter, Courses) :- evaluate(setofall(Symbol, offered(Symbol, Quarter)), Courses)
-planned_courses(Quarter, Courses) :- evaluate(setofall(Symbol, distinct(Quarter, directory) & plan(Symbol, Quarter)), Courses)
+planned_courses(Quarter, Courses) :- evaluate(setofall(Symbol, plan(Symbol, Quarter)), Courses)
 
 % Relates a list of courses with the units corresponding to each course
 courses_to_units(Course!Courses, Unit!Units) :-
@@ -303,8 +300,14 @@ unit_total(Quarter, Sum) :-
   courses_to_units(Courses, Units) &
   evaluate(sum(Units), Sum)
 
-innerhtml(dummy, Sum) :-
-  unit_total(202102, Sum)
+in_unit_bound(Quarter) :-
+  unit_total(Quarter, Sum) &
+  leq(12, Sum) & leq(Sum, 20)
+
+% True if X is less than or equal to Y
+leq(X, Y) :-
+  evaluate(min(X,Y), Lesser) &
+  same(X, Lesser)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Styling
@@ -312,6 +315,10 @@ innerhtml(dummy, Sum) :-
 
 style(QUARTER,"backgroundColor","#eeeeee") :-
   dragging(COURSE) & ~offered(COURSE,QUARTER)
+
+style(QUARTER, "backgroundColor", "#090") :-
+  true(quarter(QUARTER), catalog) &
+  in_unit_bound(QUARTER)
 
 style(COURSE,"backgroundColor","#ffeeee") :-
   unfounded(COURSE)
@@ -734,6 +741,24 @@ course(trackelective4,"","","Elective",3)
 
 %% Added courses from the 2020-2021 year
 course(cs204, "CS", "204", "Computational Law", 3)
+
+%% add list of quarters
+quarter(202101)
+quarter(202102)
+quarter(202103)
+quarter(202104)
+quarter(202201)
+quarter(202202)
+quarter(202203)
+quarter(202204)
+quarter(202301)
+quarter(202302)
+quarter(202303)
+quarter(202304)
+quarter(202401)
+quarter(202402)
+quarter(202403)
+quarter(202404)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% End of Data
