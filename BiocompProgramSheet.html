@@ -235,7 +235,7 @@
   </table>
 
   <ul style='color:#888888'>
-    <li>CS 181W and CS182W satisfy the Writing in the Major (WIM) requirement.</li>
+    <li id="req(wim)" style="font-variant:small-caps;color:red">CS 181W and CS182W satisfy the Writing in the Major (WIM) requirement.</li>
     <li>Engr 117 is the same as FEMGEN 117/217 and CSRE 117.</li>
     <li>Other courses require departmental approval.</li>
   </ul>
@@ -728,6 +728,12 @@
       <td><select id='grade(archlgy151)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(archlgy151)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
+    <tr id='row(appphys294)' style='display:none'>
+      <td>AppPhys 294</td>
+      <td>Cellular Biophysics</td>
+      <td><select id='grade(appphys294)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(appphys294)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
     <tr id='row(bio150)' style='display:none'>
       <td>Bio 150</td>
       <td>Human Behavioral Biology</td>
@@ -794,11 +800,71 @@
       <td><select id='grade(bio86)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(bio86)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
+        <tr id='row(bio104)' style='display:none'>
+      <td>Bio 104</td>
+      <td>Advance Molecular Biology: Epigenetics and Proteostasi</td>
+      <td><select id='grade(bio104)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bio104)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+  <tr id='row(bio112)' style='display:none'>
+      <td>Bio 112</td>
+      <td>Human Physiology</td>
+      <td><select id='grade(bio104)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bio112)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+       <tr id='row(bio118)' style='display:none'>
+      <td>Bio 118</td>
+      <td>Genetic Analysis of Biological Processes</td>
+      <td><select id='grade(bio118)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bio118)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+   <tr id='row(bio158)' style='display:none'>
+      <td>Bio 158</td>
+      <td>Developmental Neurobiology</td>
+      <td><select id='grade(bio158)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bio158)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+       <tr id='row(bio183)' style='display:none'>
+      <td>Bio 183</td>
+      <td>Theoretical Population Genetics</td>
+      <td><select id='grade(bio183)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bio183)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+       <tr id='row(bio214)' style='display:none'>
+      <td>Bio 214</td>
+      <td>Advanced Cell Biology</td>
+      <td><select id='grade(bio214)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bio214)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(bio230)' style='display:none'>
+      <td>Bio 230</td>
+      <td>Molecular and Cellular Immunology</td>
+      <td><select id='grade(bio230)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bio230)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>    
+    <tr id='row(bioc241)' style='display:none'>
+      <td>BIOC 241</td>
+      <td>Biological Macromolecules</td>
+      <td><select id='grade(bioc241)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bioc241)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(bioe101)' style='display:none'>
+      <td>BioE 101</td>
+      <td>Systems Biology</td>
+      <td><select id='grade(bioe101)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bioe101)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
     <tr id='row(bioe131)' style='display:none'>
       <td>BioE 131</td>
       <td>Ethics in Bioengineering</td>
       <td><select id='grade(bioe131)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(bioe131)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+<tr id='row(bioe220)' style='display:none'>
+      <td>BioE 220</td>
+      <td>Introduction to Imaging and Image-based Human Anatomy</td>
+      <td><select id='grade(bioe220)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(bioe220)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
     <tr id='row(cee63)' style='display:none'>
       <td>CEE 63</td>
@@ -824,6 +890,12 @@
       <td><select id='grade(chem31b)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(chem31b)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
+    <tr id='row(chem31m)' style='display:none'>
+      <td>Chem 31M</td>
+      <td>Chemical Principles: From Molecules to Solids</td>
+      <td><select id='grade(chem31m)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(chem31m)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
     <tr id='row(chem31x)' style='display:none'>
       <td>Chem 31X</td>
       <td>Chemical Principles (Accelerated)</td>
@@ -836,11 +908,35 @@
       <td><select id='grade(chem33)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(chem33)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
+    <tr id='row(chem141)' style='display:none'>
+      <td>Chem 141</td>
+      <td>The Chemical Principles of Life I</td>
+      <td><select id='grade(chem141)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(chem141)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+     <tr id='row(chem171)' style='display:none'>
+      <td>Chem 171</td>
+      <td>Physical Chemistry I</td>
+      <td><select id='grade(chem171)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(chem171)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
     <tr id='row(chemap)' style='display:none'>
       <td> </td>
       <td>AP Chemistry</td>
       <td><select id='grade(chemap)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(chemap)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(chemeng150)' style='display:none'>
+      <td> ChemEng 150</td>
+      <td>Biochemical Engineering</td>
+      <td><select id='grade(chemeng150)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(chemeng150)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(chemeng174)' style='display:none'>
+      <td> ChemEng 174</td>
+      <td>Environmental Microbiology I</td>
+      <td><select id='grade(chemeng174)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(chemeng174)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
     <tr id='row(classics168)' style='display:none'>
       <td>Classics 168</td>
@@ -1598,6 +1694,12 @@
       <td><select id='grade(cs371)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(cs371)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
+    <tr id='row(cs373)' style='display:none'>
+      <td>CS 373</td>
+      <td>Statistical and Machine Learning Methods for Genomics</td>
+      <td><select id='grade(cs373)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(cs373)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
     <tr id='row(cs379)' style='display:none'>
       <td>CS 379</td>
       <td>Interdisciplinary Topics</td>
@@ -1615,6 +1717,12 @@
       <td>Computation and Cognition: The Probabilistic Approach</td>
       <td><select id='grade(cs428)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(cs428)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(dbio210)' style='display:none'>
+      <td>Dbio 210</td>
+      <td>Developmental Biology</td>
+      <td><select id='grade(dbio210)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(dbio210)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
     <tr id='row(earthsys10)' style='display:none'>
       <td>Earthsys 10</td>
@@ -1657,6 +1765,12 @@
       <td>Computer Systems Architecture</td>
       <td><select id='grade(ee282)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(ee282)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(ee364a)' style='display:none'>
+      <td>EE 364A</td>
+      <td>Convex Optimization I</td>
+      <td><select id='grade(ee364a)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(ee364a)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
     <tr id='row(ee364b)' style='display:none'>
       <td>EE 364B</td>
@@ -1826,6 +1940,12 @@
       <td><select id='grade(fundamentalelective4)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(fundamentalelective4)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
+    <tr id='row(gene211)' style='display:none'>
+      <td>GENE 211</td>
+      <td>Genomics</td>
+      <td><select id='grade(gene211)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(gene211)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>    
     <tr id='row(gs1)' style='display:none'>
       <td>Geo 1</td>
       <td>Introduction to Geology</td>
@@ -1837,6 +1957,23 @@
       <td>Foundations of Bioethics</td>
       <td><select id='grade(humbio174)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(humbio174)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(humbio2a)' style='display:none'>
+      <td>Humbio 2A</td>
+      <td>Genetics, Evolution, and Ecology</td>
+      <td><select id='grade(humbio174)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(humbio2a)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(humbio3a)' style='display:none'>
+      <td>Humbio 3A</td>
+      <td>Cell and Developmental Biology</td>
+      <td><select id='grade(humbio174)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(humbio3a)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr><tr id='row(humbio4a)' style='display:none'>
+      <td>Humbio 4A</td>
+      <td>The Human Organism</td>
+      <td><select id='grade(humbio4a)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(humbio4a)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
     <tr id='row(math104)' style='display:none'>
       <td>Math 104</td>
@@ -1921,6 +2058,18 @@
       <td>Ethics and Equity in Transportation Systems</td>
       <td><select id='grade(me267)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(me267)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(me281)' style='display:none'>
+      <td>ME 281</td>
+      <td>Biomechanics of Movement</td>
+      <td><select id='grade(me281)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(me281)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <tr id='row(mse152)' style='display:none'>
+      <td>MS&E 152</td>
+      <td>Introduction to Decision Analysis</td>
+      <td><select id='grade(mse152)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(mse152)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
     <tr id='row(mse193)' style='display:none'>
       <td>MS&E 193</td>
@@ -2181,8 +2330,8 @@
       <td><input id='units(scienceelective4)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
     <tr id='row(stats141)' style='display:none'>
-      <td>Stats 205</td>
-      <td>Biostatistic</td>
+      <td>Stats 141</td>
+      <td>Biostatistics</td>
       <td><select id='grade(stats141)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(stats141)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
@@ -2210,6 +2359,12 @@
       <td><select id='grade(stats205)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
       <td><input id='units(stats205)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
+     <tr id='row(stats206)' style='display:none'>
+      <td>Stats 206</td>
+      <td>Applied Multivariate Analysis</td>
+      <td><select id='grade(stats206)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(stats206)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
     <tr id='row(stats215)' style='display:none'>
       <td>Stats 215</td>
       <td>Statistical Models in Biology</td>
@@ -2226,9 +2381,58 @@
       <td>Stats 315B</td>
       <td>Modern Applied Statistics: Data Mining</td>
       <td><select id='grade(stats315b)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
-      <td><input id='units(stats315b)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+      <td><input id='units(surg101)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
     </tr>
-    <!--=== COURSE ROWS END HERE ===-->
+        <tr id='row(surg101)' style='display:none'>
+      <td>Surg 101</td>
+      <td>Regional Study of Human Structure</td>
+      <td><select id='grade(surg101)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+      <td><input id='units(surg101)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <!--=== ELECTIVE ROWS START HERE ===-->
+    <tr id='row(chemelective)' style='display:none'>
+    <td><input autoquote="true" id="courseid(chemelective)" maxlength="20" onchange="modstring(this)" placeholder="Course Identifier" size="20" type="text"></td>
+    <td><input autoquote="true" id="title(chemelective)" maxlength="100" onchange="modstring(this)" placeholder="Chemistry Elective" size="70" type="text"></td>
+    <td><select id='grade(chemelective)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+    <td><input id='units(chemelective)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+  </tr>
+  <tr>
+    <td><input autoquote="true" id="courseid(elective1)" maxlength="20" onchange="modstring(this)" placeholder="Course Identifier" size="20" type="text"></td>
+    <td><input autoquote="true" id="title(elective1)" maxlength="100" onchange="modstring(this)" placeholder="Course Title" size="70" type="text"></td>
+    <td><select id='grade(elective1)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+    <td><input id='units(elective1)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+  </tr>
+  <tr>
+    <td><input autoquote="true" id="courseid(elective2)" maxlength="20" onchange="modstring(this)" placeholder="Course Identifier" size="20" type="text"></td>
+    <td><input autoquote="true" id="title(elective2)" maxlength="100" onchange="modstring(this)" placeholder="Course Title" size="70" type="text"></td>
+    <td><select id='grade(elective2)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+    <td><input id='units(elective2)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+  </tr>
+  <tr>
+    <td><input autoquote="true" id="courseid(elective3)" maxlength="20" onchange="modstring(this)" placeholder="Course Identifier" size="20" type="text"></td>
+    <td><input autoquote="true" id="title(elective3)" maxlength="100" onchange="modstring(this)" placeholder="Course Title" size="70" type="text"></td>
+    <td><select id='grade(elective3)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+    <td><input id='units(elective3)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+  </tr>
+  <tr>
+    <td><input autoquote="true" id="courseid(elective4)" maxlength="20" onchange="modstring(this)" placeholder="Course Identifier" size="20" type="text"></td>
+    <td><input autoquote="true" id="title(elective4)" maxlength="100" onchange="modstring(this)" placeholder="Course Title" size="70" type="text"></td>
+    <td><select id='grade(elective4)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+    <td><input id='units(elective4)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+  </tr>
+  <tr>
+    <td><input autoquote="true" id="courseid(elective5)" maxlength="20" onchange="modstring(this)" placeholder="Course Identifier" size="20" type="text"></td>
+    <td><input autoquote="true" id="title(elective5)" maxlength="100" onchange="modstring(this)" placeholder="Course Title" size="70" type="text"></td>
+    <td><select id='grade(elective5)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+    <td><input id='units(elective5)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+  </tr>
+  <tr>
+    <td><input autoquote="true" id="courseid(elective6)" maxlength="20" onchange="modstring(this)" placeholder="Course Identifier" size="20" type="text"></td>
+    <td><input autoquote="true" id="title(elective6)" maxlength="100" onchange="modstring(this)" placeholder="Course Title" size="70" type="text"></td>
+    <td><select id='grade(elective6)' style='border-width: 1px; border-style: solid; border-color: lightgrey; padding: 5px; outline: none; width: 100%; box-sizing: border-box;' onchange='modselector(this)'><option value='nograde'></option><option value='a+'>A+</option><option value='a'>A</option><option value='a-'>A-</option><option value='b+'>B+</option><option value='b'>B</option><option value='b-'>B-</option><option value='c+'>C+</option><option value='c'>C</option><option value='c-'>C-</option><option value='d+'>D+</option><option value='d'>D</option><option value='d-'>D-</option><option value='cr'>CR</option><option value='i'>I</option><option value='l'>L</option><option value='n'>N</option><option value='n-'>N-</option><option value='nc'>NC</option><option value='np'>NP</option><option value='rp'>RP</option><option value='s'>S</option><option value='w'>W</option><option value='gnr'>GNR</option></select></td>
+    <td><input id='units(elective6)' type='text' size='4' style='text-align:right' onkeypress='return digitp(event.charCode)' onchange='modtext(this)'></td>
+    </tr>
+    <!--=== ELECTIVE ROWS END HERE ===-->
   </table>
 
   <ul style='color:#888888'>
@@ -2265,8 +2469,8 @@
   </table>
 </center>
 
-<!--=========================================================================-->
 
+<!--=========================================================================-->
 <fieldset class="noprint">
   <legend style="font-variant:small-caps">Actions</legend>
   <form id='submitform' action='ugcs_change_programsheet.php' method='post'>
@@ -2293,7 +2497,7 @@
   </form>
 </fieldset>
 
-<!--=========================================================================-->
+<!--=======================================================================-->
 
 <textarea id="lambda" style="display:none;" type="text/hrf"></textarea>
 
@@ -2501,139 +2705,6 @@ csunits(TOTAL) :-
 ugunits(TOTAL) :-
   setofall([UNITS,COURSE], josen(SECTION,COURSE) & units(COURSE,UNITS), S) &
   evaluate(sum(map(first,S)),TOTAL)
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% Satisfiers for this program sheet
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-courses(mathsection(1),math19)
-courses(mathsection(1),math20)
-courses(mathsection(1),math21)
-courses(mathsection(1),mathap)
-
-courses(mathsection(2),cs103)
-courses(mathsection(2),cs109)
-
-courses(mathsection(3),stats141)
-courses(mathsection(3),stats203)
-courses(mathsection(3),stats205)
-courses(mathsection(3),stats215)
-
-courses(sciencesection(1),phys21)
-courses(sciencesection(1),phys41)
-courses(sciencesection(1),phys41e)
-courses(sciencesection(1),phys61)
-courses(sciencesection(1),physap1)
-
-courses(sciencesection(2),chem31a)
-courses(sciencesection(2),chem31b)
-courses(sciencesection(2),chem31m)
-courses(sciencesection(2),chemap)
-
-courses(sciencesection(3),chem33)
-
-courses(sciencesection(4),bio82)
-courses(sciencesection(4),bio83)
-courses(sciencesection(4),bio84)
-courses(sciencesection(4),bio85)
-courses(sciencesection(4),bio86)
-courses(sciencesection(4),humbio2a)
-courses(sciencesection(4),humbio3a)
-courses(sciencesection(4),humbio4a)
-
-courses(tissection(1),aa252)
-courses(tissection(1),bioe131)
-courses(tissection(1),archlgy151)
-courses(tissection(1),classics168)
-courses(tissection(1),comm120w)
-courses(tissection(1),comm166)
-courses(tissection(1),cs181)
-courses(tissection(1),cs181w)
-courses(tissection(1),cs182)
-courses(tissection(1),cs182w)
-courses(tissection(1),engr117)
-courses(tissection(1),engr131)
-courses(tissection(1),engr145)
-courses(tissection(1),engr148)
-courses(tissection(1),engr248)
-courses(tissection(1),humbio174)
-courses(tissection(1),me267)
-courses(tissection(1),mse193)
-courses(tissection(1),polisci114s)
-courses(tissection(1),othertis)
-
-courses(fundamentalsection(1),cs106b)
-courses(fundamentalsection(1),cs106x)
-
-courses(fundamentalsection(2),engr40a)
-courses(fundamentalsection(2),engr40b)
-courses(fundamentalsection(2),engr40m)
-
-courses(fundamentalsection(3),cee70)
-courses(fundamentalsection(3),engr10)
-courses(fundamentalsection(3),engr14)
-courses(fundamentalsection(3),engr15)
-courses(fundamentalsection(3),engr20)
-courses(fundamentalsection(3),engr21)
-courses(fundamentalsection(3),engr25b)
-courses(fundamentalsection(3),engr25e)
-courses(fundamentalsection(3),engr50)
-courses(fundamentalsection(3),engr50e)
-courses(fundamentalsection(3),engr50m)
-courses(fundamentalsection(3),engr60)
-courses(fundamentalsection(3),engr62)
-courses(fundamentalsection(3),engr80)
-
-courses(fundamentalsection(4),fundamentalelective1)
-courses(fundamentalsection(4),fundamentalelective2)
-courses(fundamentalsection(4),fundamentalelective3)
-courses(fundamentalsection(4),fundamentalelective4)
-
-courses(core(1),cs107)
-courses(core(1),cs107e)
-
-courses(core(2),cs110)
-courses(core(2),cs111)
-
-courses(core(3),cs161)
-
-courses(depth(1),cs221)
-courses(depth(1),cs228)
-courses(depth(1),cs229)
-courses(depth(1),cs231a)
-
-courses(depth(2),cs235)
-courses(depth(2),cs270)
-courses(depth(2),cs273a)
-courses(depth(2),cs274)
-courses(depth(2),cs275)
-courses(depth(2),cs279)
-
-courses(depth(3),cs124)
-courses(depth(3),cs229)
-courses(depth(3),cs274)
-courses(depth(3),cs145)
-courses(depth(3),cs231a)
-courses(depth(3),cs275)
-courses(depth(3),cs147)
-courses(depth(3),cs235)
-courses(depth(3),cs279)
-courses(depth(3),cs148)
-courses(depth(3),cs248)
-courses(depth(3),cs221)
-courses(depth(3),cs270)
-courses(depth(3),cs228)
-courses(depth(3),cs273a)
-
-courses(elective(1),cme108)
-
-courses(senior(1),cs191)
-courses(senior(1),cs191w)
-courses(senior(1),cs194)
-courses(senior(1),cs194h)
-courses(senior(1),cs194w)
-courses(senior(1),cs210b)
-courses(senior(1),cs294w)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Miscellaneous
@@ -2973,7 +3044,7 @@ course(bio183,"Bio","183","Theoretical Population Genetics",3)
 course(bio214,"Bio","214","Advanced Cell Biology",4)
 course(bio217,"Bio","217","Translational Bioinformatics",4)
 course(bio230,"Bio","230","Molecular and Cellular Immunology",4)
-course(bioc241,"BIOC","241","Biological Macromolecules ",5)
+course(bioc241,"BIOC","241","Biological Macromolecules",5)
 course(bioe101,"BIOE","101","Systems Biology",3)
 course(bioe131,"BIOE","131","Ethics in Bioengineering",3)
 course(bioe220,"BIOE","220","Introduction to Imaging and Image-based Human Anatomy",3)
@@ -3393,15 +3464,17 @@ course(surg101,"Surg","101","Regional Study of Human Structure",5)
 
 <!--=========================================================================-->
 
-    </div>
-  </center>
-  <br/>
 </body>
 
 <!--=========================================================================-->
 
 </html><dataset id='metadata' style='display:none'>
-
+val(sheet,sheet_3831339455001)
+val(date,"05/29/2021")
+val(student,atandel)
+val(studentname,"Ayushi Tandel")
+val(client,student)
+val(status,draft)
 </dataset>
 <script type='text/javascript'>
 
