@@ -4,7 +4,35 @@
 
 <head>
   <title>BSCS Program Schedule</title>
-  <style name="worksheet" type="text/css">p{margin:0px;padding:0px;}</style>
+  <style name="worksheet" type="text/css">
+    p {
+      margin: 0px;
+      padding: 0px;
+    }
+    .course {
+      width:106;
+      border-radius: 5px;
+      border-width: 2px;
+      border-style: solid;
+      border-color: gray;
+      text-align: center;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      cursor:pointer
+    }
+    body {
+      background-color: #900;
+    }
+    .valid {
+      background-color: #cfc;
+    }
+    .highlight {
+      background-color: #fe0;
+    }
+    .invalid {
+      background-color: #f00;
+    }
+  </style>
   <script src="http://epilog.stanford.edu/javascript/epilog.js"></script>
   <script src="http://minimal.stanford.edu/worksheets/javascript/worksheets.js"></script>
   <script>
@@ -44,8 +72,6 @@ function selectcourse (widget)
 function deselect (ev)
  {ev.preventDefault();
   var course = ev.dataTransfer.getData("text");
-  for (var i=0; i<quarters.length; i++)
-      {document.getElementById(quarters[i]).style.backgroundColor = '#ffffff'};
   var widget = document.getElementById(course);
   var oldqtr = widget.parentNode.id;
   dropfact(seq('plan',course,oldqtr),lambda);
@@ -56,18 +82,21 @@ function deselect (ev)
 function makecourse (course)
  {var widget = document.createElement('div');
   widget.id = course;
-  widget.setAttribute('style','width:106;border-radius:5px;border-width:2px; border-style: solid; border-color: gray;background-color:#eeeeee;text-align:center;padding-top:4px; padding-bottom:4px;cursor:pointer');
+  widget.className = 'course';
   widget.setAttribute('draggable','true');
   widget.setAttribute('ondragstart','drag(event)');
   widget.innerHTML = course;
   return widget}
 
-function drag (ev)
- {ev.dataTransfer.setData("text", ev.target.id);
+function drag (ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
   var course = ev.target.id;
-  for (var i=0; i<quarters.length; i++)
-      {if (!compfindp(seq('offered',course,quarters[i]),lambda,library))
-          {document.getElementById(quarters[i]).style.backgroundColor = '#eeeeee'}}}
+  for (var i=0; i<quarters.length; i++) {
+    if (compfindp(seq('offered',course,quarters[i]),lambda,library)) {
+      document.getElementById(quarters[i]).className = 'highlight';
+    }
+  }
+}
 
 function allowDrop (event)
  {event.preventDefault()}
@@ -75,8 +104,9 @@ function allowDrop (event)
 function drop (ev)
  {ev.preventDefault();
   var course = ev.dataTransfer.getData("text");
-  for (var i=0; i<quarters.length; i++)
-      {document.getElementById(quarters[i]).style.backgroundColor = '#ffffff'};
+  for (var i=0; i<quarters.length; i++) {
+    document.getElementById(quarters[i]).className = '';
+  };
   var widget = document.getElementById(course);
   var oldqtr = widget.parentNode.id;
   var newqtr = ev.target.id;
@@ -89,11 +119,12 @@ function drop (ev)
   populatesheet()}
 
   </script>
+
 </head>
 
 <!--=========================================================================-->
 
-<body  bgcolor='#990000' onload="initializeplan()">
+<body  onload="initializeplan()">
   <center>
     <table width='720' cellspacing='0' cellpadding='0' bgcolor='#ffffff'>
       <tr>
@@ -313,17 +344,18 @@ leq(X, Y) :-
 %%% Styling
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-style(QUARTER,"backgroundColor","#eeeeee") :-
+attribute(QUARTER, "class", "invalid") :-
   dragging(COURSE) & ~offered(COURSE,QUARTER)
 
-style(QUARTER, "backgroundColor", "#090") :-
+attribute(QUARTER,"class","valid") :-
   true(quarter(QUARTER), catalog) &
   in_unit_bound(QUARTER)
 
-style(COURSE,"backgroundColor","#ffeeee") :-
+attribute(COURSE,"class","course invalid") :-
+  true(course(COURSE,_,_,_,_), catalog) &
   unfounded(COURSE)
 
-style(COURSE,"backgroundColor","#eeeeee") :-
+attribute(COURSE, "class", "course") :-
   offered(COURSE,QTR) & ~unfounded(COURSE)
 
 unfounded(COURSE) :-
@@ -338,7 +370,7 @@ prereqvalid(COURSE) :-
   plan(COURSE,QTR2) &
   plan(PREREQ,QTR1) &
   before(QTR1,QTR2)
-  
+
 prereqvalid(COURSE) :-
   plan(COURSE,directory) &
   countofall(C,prereq(C,COURSE),0)
