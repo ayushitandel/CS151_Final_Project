@@ -331,6 +331,7 @@ unit_total(Quarter, Sum) :-
   courses_to_units(Courses, Units) &
   evaluate(sum(Units), Sum)
 
+% This holds if the given quarter has 12-20 units
 in_unit_bound(Quarter) :-
   unit_total(Quarter, Sum) &
   leq(12, Sum) & leq(Sum, 20)
@@ -344,23 +345,25 @@ leq(X, Y) :-
 %%% Styling
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-attribute(QUARTER, "class", "invalid") :-
-  dragging(COURSE) & ~offered(COURSE,QUARTER)
-
+%% Color a quarter valid if it has the required number of units
 attribute(QUARTER,"class","valid") :-
   true(quarter(QUARTER), catalog) &
   in_unit_bound(QUARTER)
 
+%% Color a class invalid if we define it as invalid (definition below)
 attribute(COURSE,"class","course invalid") :-
   true(course(COURSE,_,_,_,_), catalog) &
   invalid(COURSE)
 
+%% ..and color it normal color otherwise
 attribute(COURSE, "class", "course") :-
   offered(COURSE,QTR) & ~invalid(COURSE)
 
+%% also a color a course normal if it is in directory
 attribute(COURSE, "class", "course") :-
   plan(COURSE, QTR) & same(QTR, directory)
 
+%% True if quarter X is before quarter Y
 before(X,Y) :- min(X,Y,X) & distinct(X,Y)
 
 %% A course is invalid if it has a prereq and the prereq
