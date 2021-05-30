@@ -358,22 +358,13 @@ attribute(COURSE,"class","course invalid") :-
 attribute(COURSE, "class", "course") :-
   offered(COURSE,QTR) & ~unfounded(COURSE)
 
+before(X,Y) :- min(X,Y,X) & distinct(X,Y)
+
 unfounded(COURSE) :-
   plan(COURSE,QTR) &
   distinct(QTR,directory) &
   prereq(PREREQ,COURSE) &
-  countofall(Q,plan(PREREQ,Q) & distinct(Q,directory),0)
-
-before(X,Y) :- min(X,Y,X) & distinct(X,Y)
-
-prereqvalid(COURSE) :-
-  plan(COURSE,QTR2) &
-  plan(PREREQ,QTR1) &
-  before(QTR1,QTR2)
-
-prereqvalid(COURSE) :-
-  plan(COURSE,directory) &
-  countofall(C,prereq(C,COURSE),0)
+  countofall(Q,plan(PREREQ,Q) & distinct(Q,directory) & before(Q, QTR),0)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% End of Rules
