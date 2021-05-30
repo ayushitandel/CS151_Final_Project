@@ -111,10 +111,13 @@ function drop (ev)
   var oldqtr = widget.parentNode.id;
   var newqtr = ev.target.id;
   dropfact(seq('plan',course,oldqtr),lambda);
-  savefact(seq('plan',course,newqtr),lambda)
-  if (find(newqtr,quarters))
-     {ev.target.appendChild(widget)}
-     else {document.getElementById('directory').appendChild(widget)};
+  if (find(newqtr,quarters)) {
+    ev.target.appendChild(widget);
+    savefact(seq('plan',course,newqtr),lambda);
+  } else {
+    document.getElementById('directory').appendChild(widget);
+    savefact(seq('plan',course,'directory'),lambda);
+  };
   document.getElementById('lambda').value = grindem(lambda);
   populatesheet()}
 
